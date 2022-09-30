@@ -1,0 +1,1 @@
+type or paste sentence or paragraph whose general sentiment you want to determine in the large text box and tap "Analyze"
