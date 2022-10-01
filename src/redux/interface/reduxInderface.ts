@@ -20,5 +20,6 @@ export interface ReduxAction {
 
 export interface ResultsState {
     sentiment: string,
-    confidence: number
+    confidence: number,
+    analysisText: string
 }

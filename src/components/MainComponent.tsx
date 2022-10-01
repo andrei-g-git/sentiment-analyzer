@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Analyzer from './Analyzer';
+import AnalyzerMain from './AnalyzerMain';
 import Top from './Top';
 import Footer from './Footer';
 
@@ -8,7 +8,7 @@ export const MainComponent = (props: any) => {
     return (
         <div className="Main">
             <Top />
-            <Analyzer />
+            <AnalyzerMain />
             <Footer />        
         </div>
     );

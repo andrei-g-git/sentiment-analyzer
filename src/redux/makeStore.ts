@@ -4,7 +4,7 @@ import {composeWithDevTools} from "redux-devtools-extension";
 
 const makeStore = () =>{
     const allReducers = combineReducers({
-        ui: resultsReducer
+        results: resultsReducer
     });
 
     return (
