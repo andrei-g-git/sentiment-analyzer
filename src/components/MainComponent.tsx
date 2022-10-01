@@ -1,12 +1,11 @@
-import React from 'react';
-import { connect } from 'react-redux';
 import AnalyzerMain from './AnalyzerMain';
 import Top from './Top';
 import Footer from './Footer';
+import "../css/MainComponent.scss";
 
 export const MainComponent = (props: any) => {
     return (
-        <div className="Main">
+        <div className="main-component">
             <Top />
             <AnalyzerMain />
             <Footer />        
@@ -14,8 +13,4 @@ export const MainComponent = (props: any) => {
     );
 };
 
-const mapStateToProps = (state: any) => ({});
-
-const mapDispatchToProps = {};
-
-export default connect(mapStateToProps, mapDispatchToProps)(MainComponent);
+export default MainComponent;

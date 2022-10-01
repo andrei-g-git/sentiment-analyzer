@@ -1,13 +1,19 @@
-//import React from 'react';
 import { connect } from 'react-redux';
 import AnalyzerForm from "./AnalyzerForm";
+import Results from './Results';
+import "../css/AnalyzerMain.scss";
+
 export const AnalyzerMain = (props: any) => {
     return (
-        <div className="analyzer-main-content">
+        <div className="analyzer">
             <p className="text-area-indication">
                 Write your text below
             </p>
-            <AnalyzerForm />
+            <div className="analyzer-main-content">
+                <AnalyzerForm />
+                <Results />                
+            </div>
+
         </div>
     );
 };

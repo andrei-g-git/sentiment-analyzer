@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 import SubmitButton from './SubmitButton'
 import { textAreaChanged } from '../redux/actions';
+import "../css/AnalyzerForm.scss";
 
 export const AnalyzerForm = (props: any) => {
     return (
@@ -12,10 +13,11 @@ export const AnalyzerForm = (props: any) => {
                 cols={30}
                 rows={10}
                 onChange={(event) => props.handleChange(event.target.value)}
+                placeholder="write here..."
             >
 
             </textarea>
-            <SubmitButton name="Analyze!" />
+            <SubmitButton name="Analyze mood!" />
         </form>
     );
 }

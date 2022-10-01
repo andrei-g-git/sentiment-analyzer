@@ -1,0 +1,11 @@
+@import "./Variables.scss";
+
+.main-component{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 1rem;
+
+    font-family: $standard-font-family;
+}

@@ -1,8 +1,9 @@
 import React from 'react'
+import "../css/GenericButton.scss";
 
 function SubmitButton(props: any) {
     return (
-        <input className="submit-button"
+        <input className="generic-button"
             type="submit"
             value={props.name}
         />

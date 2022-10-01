@@ -1,0 +1,26 @@
+.analyzer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    min-width: 16rem;
+    height: 30%;
+    gap: 1rem;
+
+    border-radius: 0.3rem;
+    box-shadow: 1px 1px 10px lightgray;
+
+    @media(max-width: 480px) {
+        width: 85%;
+    }
+
+    .analyzer-main-content{
+        display: flex;
+        justify-content: center;
+
+        @media(max-width: 720px){ //always on for some reason...
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+}

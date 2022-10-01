@@ -1,0 +1,22 @@
+@import "./Variables.scss";
+
+.analyzer-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    width: 12rem;
+
+    .analyzer-box{
+        width: 90%;
+        resize: none;
+        border: 1px solid $lightest-conspicuous;
+        border-radius: 0.2rem;
+        color: $light-text;
+        font-size: smaller;
+        font-weight: normal;
+        //font-family: $standard-font-family;
+    }    
+}
+
