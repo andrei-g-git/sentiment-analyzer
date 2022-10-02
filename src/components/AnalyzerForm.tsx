@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
-import SubmitButton from './SubmitButton'
+import $ from "jquery";
+import SubmitButton from './SubmitButton';
 import { textAreaChanged } from '../redux/actions';
 import "../css/AnalyzerForm.scss";
 
@@ -24,7 +25,19 @@ export const AnalyzerForm = (props: any) => {
 
 const handleSubmit = (event: any, text: string) => {
     event.preventDefault();
-    console.log("text:   ", text)
+    console.log("text:   ", text);
+
+    $.ajax({
+        url:"http://localhost:9999/analyze",
+        type: "POST",
+        data: {
+            text: text
+        },
+        dataType: "text"
+    })
+        .then(response => {
+            console.log(response);
+        });
 };
 
 const mapStateToProps = (state: any) => {
