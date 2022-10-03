@@ -27,12 +27,14 @@ const handleSubmit = (event: any, text: string) => {
     event.preventDefault();
     console.log("text:   ", text);
 
+    const data = JSON.stringify({
+        text: text
+    });
+
     $.ajax({
         url:"http://localhost:9999/analyze",
         type: "POST",
-        data: {
-            text: text
-        },
+        data: data,
         dataType: "text"
     })
         .then(response => {
