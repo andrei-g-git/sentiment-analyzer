@@ -2,13 +2,24 @@ import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 import $ from "jquery";
 import SubmitButton from './SubmitButton';
-import { textAreaChanged } from '../redux/actions';
+import { 
+    textAreaChanged, 
+    sentimentChanged,
+    scoreChanged,
+    subjectivityChanged 
+} from '../redux/actions';
 import "../css/AnalyzerForm.scss";
 
 export const AnalyzerForm = (props: any) => {
     return (
         <form className="analyzer-form"
-            onSubmit={(event) => handleSubmit(event, props.text)}
+            onSubmit={(event) => handleSubmit(
+                event, 
+                props.text, 
+                props.changeScore,
+                props.changeSentiment,
+                props.changeSubjectivity
+            )}
         >
             <textarea className="analyzer-box"
                 cols={30}
@@ -23,7 +34,7 @@ export const AnalyzerForm = (props: any) => {
     );
 }
 
-const handleSubmit = (event: any, text: string) => {
+const handleSubmit = (event: any, text: string, changeScore: Function, changeSentiment: Function, changeSubjectivity: Function) => {
     event.preventDefault();
     console.log("text:   ", text);
 
@@ -39,6 +50,10 @@ const handleSubmit = (event: any, text: string) => {
     })
         .then(response => {
             console.log(response);
+            const res = JSON.parse(response)
+            changeScore(res.score)
+            changeSentiment(res.sentiment)
+            changeSubjectivity(res.subjectivity)
         });
 };
 
@@ -52,7 +67,16 @@ const mapDispatchToProps = (dispatch: Dispatch) => {
     return{
         handleChange: (text: string) => {
             dispatch(textAreaChanged(text));
-        }
+        },
+        changeScore: (value: number) => {
+            dispatch(scoreChanged(value));
+        },
+        changeSentiment: (sentiment: string) => {
+            dispatch(sentimentChanged(sentiment));
+        },
+        changeSubjectivity: (value: number) => {
+            dispatch(subjectivityChanged(value));
+        }                
     };
 }
 

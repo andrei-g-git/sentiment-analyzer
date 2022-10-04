@@ -2,4 +2,8 @@
 
 .results{
     border-left: 1px solid $lightest-conspicuous;
+    @media(max-width: 480px){
+        border-left: none;
+        border-top: 1px solid $lightest-conspicuous; //doesn't work .. maybe I need a width
+    }
 }

@@ -1,7 +1,9 @@
 import { 
     SENTIMENT_CHANGED, 
     CONFIDENCE_CHANGED,
-    TEXT_AREA_CHANGED 
+    TEXT_AREA_CHANGED,
+    SUBJECTIVITY_CHANGED,
+    SCORE_CHANGED 
 } from "./actionTypes";
 
 import { 
@@ -12,7 +14,9 @@ import {
 const initialState: ResultsState = {
     sentiment: "",
     confidence: 0,
-    analysisText: ""
+    analysisText: "",
+    subjectivity: 0,
+    score: 1
 };
 
 export const resultsReducer = (state: ResultsState = initialState, action: ReduxAction): ResultsState => {
@@ -32,6 +36,16 @@ export const resultsReducer = (state: ResultsState = initialState, action: Redux
                 ...state,
                 analysisText: action.payload
             };
+        case SCORE_CHANGED:
+            return{
+                ...state,
+                score: action.payload
+            };     
+        case SUBJECTIVITY_CHANGED:
+            return{
+                ...state,
+                subjectivity: action.payload
+            };                    
         default:
             return state;
     }
