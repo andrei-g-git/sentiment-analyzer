@@ -12,6 +12,8 @@
     border-radius: 0.2rem;
     font-size: x-small;
 
+    //margin-bottom: 20px; //has flex, prob won't work
+
     &:hover{
         opacity: $hover-opacity;
     }

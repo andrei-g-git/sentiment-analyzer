@@ -1,0 +1,27 @@
+@import "./Variables.scss";
+
+.legend-with-bar{
+    width: 100%;
+
+    .legend-wrapper{
+        display: flex;
+        justify-content: space-between;
+
+        .legend-heading{
+            font-size: smaller;
+            color: $light-text;
+
+            &:only-child{
+                margin: 0 auto;
+            }            
+        }
+
+
+    }    
+
+    .horizontal-bar{
+        width: 100%;
+        border: 1px solid $lightest-conspicuous;
+    }
+}
+

@@ -29,7 +29,10 @@ export const AnalyzerForm = (props: any) => {
             >
 
             </textarea>
-            <SubmitButton name="Analyze mood!" />
+            <div className="submit-wrapper">
+                <SubmitButton name="Analyze mood!" />                
+            </div>
+
         </form>
     );
 }

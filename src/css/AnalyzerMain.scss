@@ -18,7 +18,10 @@
         display: flex;
         justify-content: center;
 
-        @media(max-width: 480px){ //always on for some reason...
+        width: 90%;
+        height: 90%;
+
+        @media(max-width: 480px){ 
             flex-direction: column;
             align-items: center;
         }
