@@ -1,0 +1,20 @@
+@import "./Variables.scss";
+
+.dual-values{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+
+    .value-row{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        .result-value{
+            font-size: $standard-heading-font-size;   
+            color: rgb(66, 66, 66);     
+        }        
+    }
+
+}
