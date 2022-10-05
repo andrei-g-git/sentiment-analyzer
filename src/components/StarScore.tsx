@@ -7,7 +7,7 @@ function StarScore(props: any) {
     //console.log("star classes:   \n ------------- \n", JSON.stringify(getStarClasses(props.stars)))
 
     return (
-        <div>
+        <>
             {
                 getStars(props.stars).map((item) => 
                     <img className={item.class}
@@ -17,7 +17,7 @@ function StarScore(props: any) {
                     </img>
                 )
             }
-        </div>
+        </>
     );
 }
 

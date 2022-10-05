@@ -1,6 +1,7 @@
 import { connect } from 'react-redux'
 import StarScore from "./StarScore";
 import LegendWithBar from './LegendWithBar';
+import LegendWithGraphic from './LegendWithGraphic';
 import "../css/Results.scss";
 
 function Results(props: any) {
@@ -10,13 +11,17 @@ function Results(props: any) {
                 Results                
             </p>
 
-            <div className="row-title-centered-graphic">
+            {/* <div className="row-title-centered-graphic">
                 <p className="graphic-title">
                     Overall score
                 </p>
                 <StarScore stars={Math.floor(props.score)} />                
-            </div>
+            </div> */}
 
+            <LegendWithGraphic heading="Overall score:" >
+                <StarScore stars={Math.floor(props.score)} />
+            </LegendWithGraphic>
+                 
             <LegendWithBar headings={["Header 1", "Header 2"]} />
 
 
