@@ -4,13 +4,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 5rem;
-    height: 1.2rem;
+    width: 10rem;
+    height: 2.5rem;
     background-color: $standard-button-cta;
     color: $light-cta-text;
     border: none;
-    border-radius: 0.2rem;
-    font-size: x-small;
+    border-radius: 0.4rem;
+    font-size: $standard-heading-font-size;
 
     //margin-bottom: 20px; //has flex, prob won't work
 

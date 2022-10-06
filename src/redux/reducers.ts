@@ -12,7 +12,7 @@ import {
 } from "./interface/reduxInderface";
 
 const initialState: ResultsState = {
-    sentiment: "",
+    sentiment: "n/a",
     confidence: 0,
     analysisText: "",
     subjectivity: 0,
