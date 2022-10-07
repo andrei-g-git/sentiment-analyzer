@@ -1,0 +1,11 @@
+.needle{
+    background-image: url(../assets/img/needle.png);
+    background-repeat: no-repeat;
+    background-size: 30px 80px;
+    position: absolute;
+    width: 30px;
+    height: 80px;
+    transform-origin: 50% 100%;
+
+    animation: turn-needle 2s forwards ease-in-out ;  
+}
