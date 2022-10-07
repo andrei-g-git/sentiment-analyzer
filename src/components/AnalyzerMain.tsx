@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import AnalyzerForm from "./AnalyzerForm";
 import Results from './Results';
 import "../css/AnalyzerMain.scss";
+import Contact from './Contact';
 
 export const AnalyzerMain = (props: any) => {
     return (
@@ -11,8 +12,10 @@ export const AnalyzerMain = (props: any) => {
             </p>
             <div className="analyzer-main-content">
                 <AnalyzerForm />
-                <Results />                
+                <Results />              
             </div>
+
+            <Contact />  
 
         </div>
     );
