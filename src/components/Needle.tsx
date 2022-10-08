@@ -7,15 +7,15 @@ function Needle(props: any) {
     return (
         <div className="needle">
             <style>
-                {
+                { //maybe I could still scale the gauge and needle if I place media queries here in the from/to properties
                     `
                         @keyframes turn-needle {
                             from{
-                                transform: translate(70px, 12px)
+                                transform: translate(50px, 0)
                                     rotate(calc(20deg - 90deg));
                             }
                             to{
-                                transform: translate(70px, 12px)
+                                transform: translate(50px, 0)
                                     rotate(calc(20deg + ${calcRotation(props.subjectivity)}deg));
                             }
                         }                       

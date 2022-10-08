@@ -6,8 +6,10 @@ $light-cta-text: white;
 $hover-opacity: 0.8;
 
 $standard-font-family: "Segoe UI";
-$standard-heading-font-size: large; //x-small;
 
+$standard-heading-font-size: large; //x-small;
+$standard-heading-font-size-smaller: small;
+$standard-heading-font-size-smaller-still: x-small;
 //breakpoints
 $breakpoints: (
     "xs": 0,
@@ -15,6 +17,6 @@ $breakpoints: (
     "md": 720px,
     "lg": 960px,
     "xl": 1280px,
-    "tablet": 1024px,//720px,
+    "tablet": 960px, //1024px,//720px,
     "mobile": 480px
 );

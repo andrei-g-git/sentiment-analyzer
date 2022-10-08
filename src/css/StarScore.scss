@@ -1,6 +1,13 @@
+@import "./Variables.scss";
+
 .full-star, 
 .blank-star{
     width: 32px;
     height: 32px;
+    @media(max-width: map-get($breakpoints, "xl")){
+        width: 24px;
+        height: 24px;        
+    }
+
 }
 

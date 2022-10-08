@@ -1,0 +1,14 @@
+@import "./Variables.scss";
+
+@mixin responsiveResultsHeadings(){
+    font-size: $standard-heading-font-size;
+    color: $light-text;
+
+    @media(max-width: map-get($breakpoints, "xl")){
+        font-size: $standard-heading-font-size-smaller;
+    }
+
+    // @media(max-width: map-get($breakpoints, "tablet")){
+    //     font-size: $standard-heading-font-size-smaller-still;
+    // }
+}
