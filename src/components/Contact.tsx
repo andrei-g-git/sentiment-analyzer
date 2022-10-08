@@ -9,7 +9,7 @@ function Contact() {
             </div>
             <form className="contact-form"
                 method="POST"
-                action="form url thing goes here"
+                action="https://forms.un-static.com/forms/241197b722cacb42116f504d5962801292dc2cca"
             >
                 <input className="contact-form-input"
                     id="input-name"
@@ -29,9 +29,9 @@ function Contact() {
                     name="message"
                     placeholder="Convey your message here..."
                 />
-            </form>
 
-            <SubmitButton name="Send!" />
+                <SubmitButton name="Send!" />
+            </form>
         </div>
     );
 }
