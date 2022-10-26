@@ -7,5 +7,7 @@
     height: 70px;
     transform-origin: 100% 100%;
 
-    animation: turn-needle 2s forwards ease-in-out ;  
+    //animation: turn-needle 2s forwards ease-in-out ;  
 }
+
+//no choice, styled-components doesn't work, transitions are too simplistic

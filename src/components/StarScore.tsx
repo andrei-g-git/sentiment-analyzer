@@ -54,7 +54,7 @@ const getStars = (starNumber: number): {class: string, src: string}[] => {
                 src: blankStar                
             });            
         }
-        console.log("star content at ", i, "\n", stars[i - 1])
+        //console.log("star content at ", i, "\n", stars[i - 1])
     }
     return stars;
 }

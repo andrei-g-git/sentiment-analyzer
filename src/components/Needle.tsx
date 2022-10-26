@@ -1,63 +1,61 @@
-import {useState} from "react";
+import { keyframes } from "styled-components";
 import {trimDecimals} from "../ts/utils";
 import "../css/Needle.scss";
 
 function Needle(props: any) {
-    //const [rotate, setRotate] = useState(-90);
+
+    const trimmedSubjectivity = trimDecimals(props.subjectivity, 2);
+    const angle = calcRotation(trimmedSubjectivity);
 
     return (
         <div className="needle"
-            style={getTransitionStyle(props.subjectivity, 2)}
+            style={{
+
+                // animationName: `${getAnimation(angle).getName()}`,
+                // animationDuration: `${calcDuration(trimmedSubjectivity, 7)}s`,
+                // animationTimingFunction: "ease-in-out"
+
+                transform: `translate(50px, 0)
+                    rotate(calc(20deg + ${calcRotation(trimmedSubjectivity)}deg))
+                    scale(1.2, 1.2)`,
+                transitionDuration: `${calcDuration(trimmedSubjectivity, 2)}s`,
+                transitionTimingFunction: "cubic-bezier(0.5, 2.25, 0.7, -0.2)"      
+                // transition: `
+                
+                // `           
+            }}
         >
 
         </div>
-
-/*         <div className="needle">
-            <style>
-                { //maybe I could still scale the gauge and needle if I place media queries here in the from/to properties
-                    `
-                        @keyframes turn-needle {
-                            from{
-                                transform: translate(50px, 0)
-                                    rotate(calc(20deg - 90deg));
-                            }
-                            to{
-                                transform: translate(50px, 0)
-                                    rotate(calc(20deg + ${calcRotation(props.subjectivity)}deg));
-                            }
-                        }                       
-                    `
-                }
-            </style>
-        </div> */
     );
 }
 
+const getAnimation = (angle: number) => {
+    console.log("ANGLE:   ", angle)
+    return keyframes`
+        from{
+            transform: translate(50px, 0)
+                rotate(calc(20deg - 90deg));
+        }
+        to{
+            transform: translate(50px, 0)
+                rotate(calc(20deg + ${angle}deg));
+        }    
+    `;
+};
+
 const calcRotation = (subjectivity: number): number => {
     let angle: number = 0;
-    const newSubj = parseFloat(subjectivity.toFixed(2));
-    console.log("from functipn: ", subjectivity)
     if(subjectivity <= 0.5){
-        angle = Math.floor(90 * newSubj * 2) - 90;
+        angle = Math.floor(90 * subjectivity * 2) - 90;
     } else {
-        angle = Math.floor(90 * (newSubj - 0.5) * 2);
+        angle = Math.floor(90 * (subjectivity - 0.5) * 2);
     }
-    console.log(newSubj + "-------------- and deg:  " + angle)
     return angle;
 };
 
 const calcDuration = (subjectivity: number, maxDuration: number): number => {
-    const newSubj = trimDecimals(subjectivity, 1);
-    return newSubj * maxDuration;
-};
-
-const getStyleString = (subjectivity: number): string => {
-    return `
-        transform: translate(50px, 0)
-            rotate(calc(20deg + ${calcRotation(subjectivity)}deg));
-        transition-duration: ${calcDuration(subjectivity, 2)}s;
-        transition-timing-function: ease-in-out;
-    `;
+    return subjectivity * maxDuration;
 };
 
 const getTransitionStyle = (subjectivity: number, maxDuration: number) => {
@@ -67,5 +65,5 @@ const getTransitionStyle = (subjectivity: number, maxDuration: number) => {
         transitionDuration: `${calcDuration(subjectivity, maxDuration)}s`,
         transitionTimingFunction: "ease-in-out"      
     }
-}
+};
 export default Needle;
