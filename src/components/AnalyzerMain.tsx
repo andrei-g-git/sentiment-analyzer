@@ -1,14 +1,12 @@
 import { connect } from 'react-redux';
-import Header from './Header';
 import AnalyzerForm from "./AnalyzerForm";
 import Results from './Results';
 import "../css/AnalyzerMain.scss";
-import Contact from './Contact';
+
 
 export const AnalyzerMain = (props: any) => {
     return (
         <div className="analyzer">
-            <Header />
             <p className="text-area-indication">
                 Write your text below
             </p>
@@ -16,9 +14,6 @@ export const AnalyzerMain = (props: any) => {
                 <AnalyzerForm />
                 <Results />              
             </div>
-
-            <Contact />  
-
         </div>
     );
 };

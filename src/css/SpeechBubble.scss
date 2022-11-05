@@ -1,13 +1,26 @@
+@import "./Variables.scss";
+
 .bubble-container{
-    // width: 300px;
-    // margin: 50px auto;
+    width: 300px;
     border: 4px solid #00bfb6;
-    //padding: 20px;
+    border-radius: 12px;
+    border-top-right-radius: 0px;
+    padding: 15px;
     text-align: center;
     font-weight: 900;
     color: #00bfb6;
     font-family: arial;
     position: relative;    
+
+
+}
+
+.slide-right{
+    animation: slide-right 7s linear infinite;
+
+    &:hover{
+        animation-play-state: paused;
+    }
 }
 
 .right-top:before {
@@ -28,10 +41,20 @@
     width: 0px;
     height: 0px;
     position: absolute;
-    border-left: 7px solid #fff;
+    border-left: 7px solid $header-bg-max;
     border-right: 7px solid transparent;
-    border-top: 7px solid #fff;
+    border-top: 7px solid $header-bg-max;
     border-bottom: 7px solid transparent;
     right: -11px;
     top: 0;
-  }
+}
+
+@keyframes slide-right{
+    from{
+        transform: translateX(-60vw);
+    }
+
+    to{
+        transform: translateX(110vw)
+    }
+}

@@ -9,8 +9,9 @@
     height: 30%;
     gap: 1rem;
 
+    background-color: $standard-bg;
     border-radius: 0.3rem;
-    box-shadow: 1px 1px 10px lightgray;
+    box-shadow: 1px 1px 10px 2px lightgray;
 
     @media(max-width: map-get($breakpoints, "xl")) {
         width: 70%;
