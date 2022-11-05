@@ -1,4 +1,4 @@
-import { keyframes } from "styled-components";
+//import { keyframes } from "styled-components";
 import {trimDecimals} from "../ts/utils";
 import "../css/Needle.scss";
 
@@ -30,19 +30,19 @@ function Needle(props: any) {
     );
 }
 
-const getAnimation = (angle: number) => {
-    console.log("ANGLE:   ", angle)
-    return keyframes`
-        from{
-            transform: translate(50px, 0)
-                rotate(calc(20deg - 90deg));
-        }
-        to{
-            transform: translate(50px, 0)
-                rotate(calc(20deg + ${angle}deg));
-        }    
-    `;
-};
+// const getAnimation = (angle: number) => {
+//     console.log("ANGLE:   ", angle)
+//     return keyframes`
+//         from{
+//             transform: translate(50px, 0)
+//                 rotate(calc(20deg - 90deg));
+//         }
+//         to{
+//             transform: translate(50px, 0)
+//                 rotate(calc(20deg + ${angle}deg));
+//         }    
+//     `;
+// };
 
 const calcRotation = (subjectivity: number): number => {
     let angle: number = 0;
