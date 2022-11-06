@@ -2,11 +2,12 @@ import "../css/SpeechBubble.scss";
 
 function SpeechBubble(props: any) {
     return (
-        <div className="bubble-container 
-                corner-bottom-right 
-                right-bottom-white--------nooooope-not using                
-                right-bottom                
-                slide-right"
+        <div className={`bubble-container 
+                corner-bottom-left            
+                bottom-left-${props.top}             
+                slide-left`
+            }
+            style={{top: `${props.top}%`}}
         >
             {props.text}
         </div>
