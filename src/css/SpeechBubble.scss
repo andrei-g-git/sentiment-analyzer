@@ -141,26 +141,23 @@ $transparent-quadrant: 10px solid transparent;
 @include bubbleTrianglesAtPositionY();
 
 
-.slide-right {
-    animation: slide-right 7s linear infinite;
+// .slide-right {   ---- inline now
+//     //animation: slide-right 7s linear infinite;
 
-    &:hover {
-        animation-play-state: paused;
-        //animation-duration: 199s !important;
-    }
-}
+//     &:hover {
+//         animation-play-state: paused;
+//         //animation-duration: 199s !important;
+//     }
+// }
 
-.slide-left {
-    animation: slide-left 7s linear infinite;
+// .slide-left {
+//     //animation: slide-left 7s linear infinite;
 
-    &:hover {
-        animation-play-state: paused;
-        //animation-duration: 199s !important;
-    }
-}
-
-
-
+//     &:hover {
+//         animation-play-state: paused;
+//         //animation-duration: 199s !important;
+//     }
+// }
 
 @keyframes slide-right {
     from {
