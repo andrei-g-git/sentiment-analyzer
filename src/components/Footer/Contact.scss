@@ -1,6 +1,6 @@
 @import "../../css/Variables.scss";
 
-@mixin flexColumnCentered($gap: 1rem){
+@mixin flexColumnCentered($gap: 1rem){ //reusing in Footer, should be in Mixins.scss
     display: flex;
     flex-direction: column;
     align-items: center;    
@@ -9,16 +9,22 @@
 
 @mixin inputCommon {
     border: 1px solid $lightest-conspicuous;
-    border-radius: 0.2rem;
+    border-radius: 0.3rem;
     color: $light-text;
     font-size: $standard-heading-font-size;
-    font-weight: normal;    
+    font-weight: normal;   
+    padding: 0 0.5rem;
+    box-shadow: 0 3px 8px lightgray; 
 }
 
 .contact{
     @include flexColumnCentered();
-    width: 60%;
-    max-width: 700px;
+    // width: 60%;
+    // max-width: 700px;
+
+    //padding: 2rem 0;
+
+    width: 100%;
 
     .contact-form{
         @include flexColumnCentered();
@@ -27,6 +33,11 @@
         .contact-form-input{
             width: 100%;
             @include inputCommon();
+
+            &::placeholder{
+                font-size: $placeholder-font-size;
+                font-weight: 550;
+            }
         }
 
         .contact-form-text-area{

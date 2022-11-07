@@ -1,0 +1,28 @@
+@import "../../css/Variables.scss";
+
+@mixin flexColumnCentered($gap: 1rem){
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    gap: $gap;
+}
+
+.footer{
+    @include flexColumnCentered(1.5rem);
+    width: 60%;
+    max-width: 700px;
+
+    padding: 2rem 0;    
+
+    .back-to-top{
+        width: 64px;
+        height: 64px;
+    }
+
+    // .conspicuous-heading{ //should be reusable
+    //     font-size: $standard-heading-font-size;
+    //     font-weight: $standard-heading-weight;
+    //     font-family: $standard-font-family;
+    //     color: $bit-light-text;          
+    // }
+}

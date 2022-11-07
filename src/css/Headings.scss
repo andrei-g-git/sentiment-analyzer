@@ -1,0 +1,15 @@
+@import "./Variables.scss";
+
+.main-heading{
+    font-size: $standard-heading-font-size;
+    font-weight: $standard-heading-weight;
+    font-family: $standard-font-family;
+    color: $bit-light-text;    
+}
+
+.conspicuous-heading{
+    font-size: $standard-heading-font-size;
+    font-weight: normal;//$standard-heading-weight;
+    font-family: $standard-font-family;
+    color: $lightest-conspicuous;  
+}

@@ -1,12 +1,13 @@
 import SubmitButton from "../SubmitButton";
+import MainHeading from "../MainHeading";
 import "./Contact.scss";
 
 function Contact() {
     return (
         <div className="contact">
-            <div className="contact-heading">
-                Get in touch
-            </div>
+            <MainHeading>
+                Get in touch!
+            </MainHeading>
             <form className="contact-form"
                 method="POST"
                 action="https://forms.un-static.com/forms/241197b722cacb42116f504d5962801292dc2cca"
