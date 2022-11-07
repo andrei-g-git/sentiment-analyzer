@@ -1,0 +1,23 @@
+.bubble-and-popup{
+    position: relative;
+}
+
+@keyframes slide-right {
+    from {
+        transform: translateX(-60vw);
+    }
+
+    to {
+        transform: translateX(110vw)
+    }
+}
+
+@keyframes slide-left {
+    from {
+        transform: translateX(110vw);
+    }
+
+    to {
+        transform: translateX(-60vw)
+    }
+}

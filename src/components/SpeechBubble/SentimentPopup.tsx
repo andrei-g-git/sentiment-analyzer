@@ -1,6 +1,11 @@
+import "./SentimentPopup.scss";
+
 function SentimentPopup(props: any) {
     return (
-        <div>SentimentPopup</div>
+        <img className="sentiment-popup"
+            src={props.emoji}
+            alt="popup"
+        />
     );
 };
 

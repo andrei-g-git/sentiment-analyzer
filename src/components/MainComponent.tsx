@@ -1,5 +1,5 @@
 import AnalyzerMain from './AnalyzerMain';
-import Top from './Top';
+import Top from './Footer/Top';
 import Footer from './Footer';
 import "../css/MainComponent.scss";
 
