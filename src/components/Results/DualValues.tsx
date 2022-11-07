@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import "../css/DualValues.scss";
+import "./DualValues.scss";
 
 type ValueAndColor = {
     value: string | number,

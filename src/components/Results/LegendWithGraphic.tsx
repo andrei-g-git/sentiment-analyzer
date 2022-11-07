@@ -1,4 +1,4 @@
-import "../css/LegendWithGraphic.scss";
+import "./LegendWithGraphic.scss";
 
 function LegendWithGraphic(props: any) {
     return (

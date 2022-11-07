@@ -1,4 +1,4 @@
-import "../css/LegendWithBar.scss";
+import "./LegendWithBar.scss";
 
 function LegendWithBar(props: any) {
     return (

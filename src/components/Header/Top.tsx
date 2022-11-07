@@ -14,7 +14,7 @@ function Top() {
                 animationDuration={7}
                 delay={1}
                 fillMode="backwards" 
-                top={10}
+                top={15}
                 popup={SentimentPopup}
                 emoji={mad}
             >
@@ -37,7 +37,7 @@ function Top() {
                 <SpeechBubble 
                     text="aaaaa a aaaaa aaaaaaa" 
                     position="bottom-right"
-                    top={30}
+                    top={20}
 
                 />                  
             </BubbleAndPopup>
@@ -54,7 +54,7 @@ function Top() {
                 <SpeechBubble 
                     text="gggggg g gggggggg g gggggg wetewf wefew ggggggggggwef wef fwewewewewewe" 
                     position="top-left"
-                    top={20}
+                    top={30}
 
                 />                  
             </BubbleAndPopup>

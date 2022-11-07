@@ -1,5 +1,5 @@
-import SubmitButton from "./SubmitButton";
-import "../css/Contact.scss";
+import SubmitButton from "../SubmitButton";
+import "./Contact.scss";
 
 function Contact() {
     return (

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import AnalyzerForm from "./AnalyzerForm";
-import Results from './Results';
+import Results from './Results/Results';
 import "../css/AnalyzerMain.scss";
 
 

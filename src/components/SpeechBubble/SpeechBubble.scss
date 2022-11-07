@@ -3,6 +3,8 @@
 @import "../../css/Variables.scss";
 $solid-quadrant: 10px solid #00bfb6;
 $transparent-quadrant: 10px solid transparent;
+$height-percent-increment: 10%;
+$additional-y-offset: 5%;
 
 @mixin triangle($left, $right, $top, $bottom, $offsetRight, $offsetTop) {
     content: "";
@@ -32,9 +34,9 @@ $transparent-quadrant: 10px solid transparent;
         
         .top-right-#{$i*10}:after {
             @include triangle(
-                7px solid color.scale($header-bg-max, $lightness: calc(5% + $i * 10%)),
+                7px solid color.scale($header-bg-max, $lightness: calc(5% + $i * $height-percent-increment + $additional-y-offset)),
                 7px solid transparent,
-                7px solid color.scale($header-bg-max, $lightness: calc(5% + $i * 10%)),
+                7px solid color.scale($header-bg-max, $lightness: calc(5% + $i * $height-percent-increment + $additional-y-offset)),
                 7px solid transparent,
                 -11px,
                 0
@@ -54,10 +56,10 @@ $transparent-quadrant: 10px solid transparent;
         
         .bottom-right-#{$i*10}:after {
             @include triangle(
-                6px solid color.scale($header-bg-max, $lightness: calc(20% + $i * 10%)),
+                6px solid color.scale($header-bg-max, $lightness: calc(25% + $i * $height-percent-increment + $additional-y-offset)),
                 6px solid transparent,
                 6px solid transparent,
-                6px solid color.scale($header-bg-max, $lightness: calc(20% + $i * 10%)),
+                6px solid color.scale($header-bg-max, $lightness: calc(25% + $i * $height-percent-increment + $additional-y-offset)),
                 calc(-11px - 4px + 3px),
                 calc(100% - 7px - 5px)
             );
@@ -77,8 +79,8 @@ $transparent-quadrant: 10px solid transparent;
         .top-left-#{$i*10}:after {
             @include triangle(
                 6px solid transparent,
-                6px solid color.scale($header-bg-max, $lightness: calc(5% + $i * 10%)),
-                6px solid color.scale($header-bg-max, $lightness: calc(5% + $i * 10%)),
+                6px solid color.scale($header-bg-max, $lightness: calc(5% + $i * $height-percent-increment + $additional-y-offset)),
+                6px solid color.scale($header-bg-max, $lightness: calc(5% + $i * $height-percent-increment + $additional-y-offset)),
                 6px solid transparent,
                 100%,
                 0
@@ -99,9 +101,9 @@ $transparent-quadrant: 10px solid transparent;
         .bottom-left-#{$i*10}:after {
             @include triangle(
                 6px solid transparent,
-                6px solid color.scale($header-bg-max, $lightness: calc(20% + $i * 10%)),
+                6px solid color.scale($header-bg-max, $lightness: calc(25% + $i * $height-percent-increment + $additional-y-offset)),
                 6px solid transparent,
-                6px solid color.scale($header-bg-max, $lightness: calc(20% + $i * 10%)),
+                6px solid color.scale($header-bg-max, $lightness: calc(25% + $i * $height-percent-increment + $additional-y-offset)),
                 100%,
                 calc(100% - 7px - 5px)
             );
@@ -110,14 +112,15 @@ $transparent-quadrant: 10px solid transparent;
 }
 
 .bubble-container {
-    width: 200px;
+    width: 150px;
     border: 4px solid #00bfb6;
     border-radius: 12px;
-    padding: 15px;
+    padding: 8px;//15px;
     text-align: center;
-    font-weight: 900;
+    font-weight: bold; //900;
     color: #00bfb6;
     font-family: arial;
+    font-size: small;
     position: relative;
 
 }
@@ -138,44 +141,6 @@ $transparent-quadrant: 10px solid transparent;
     border-bottom-left-radius: 0px;
 }
 
+
 //########################
 @include bubbleTrianglesAtPositionY();
-
-
-// .slide-right {   ---- inline now
-//     //animation: slide-right 7s linear infinite;
-
-//     &:hover {
-//         animation-play-state: paused;
-//         //animation-duration: 199s !important;
-//     }
-// }
-
-// .slide-left {
-//     //animation: slide-left 7s linear infinite;
-
-//     &:hover {
-//         animation-play-state: paused;
-//         //animation-duration: 199s !important;
-//     }
-// }
-
-@keyframes slide-right {
-    from {
-        transform: translateX(-60vw);
-    }
-
-    to {
-        transform: translateX(110vw)
-    }
-}
-
-@keyframes slide-left {
-    from {
-        transform: translateX(110vw);
-    }
-
-    to {
-        transform: translateX(-60vw)
-    }
-}

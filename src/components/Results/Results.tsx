@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 import { connect } from 'react-redux'
-import StarScore from "./StarScore";
+import StarScore from "../StarScore";
 import LegendWithBar from './LegendWithBar';
 import LegendWithGraphic from './LegendWithGraphic';
-import SubjectivityGauge from './SubjectivityGauge';
+import SubjectivityGauge from '../Gauge/SubjectivityGauge';
 import DualValues from './DualValues';
-import "../css/Results.scss";
+import "./Results.scss";
 
 
 function Results(props: any) {

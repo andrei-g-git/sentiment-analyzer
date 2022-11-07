@@ -1,5 +1,5 @@
-import "../css/SubjectivityGauge.scss";
-import gauge from "../assets/img/gauge.png";
+import "./SubjectivityGauge.scss";
+import gauge from "../../assets/img/gauge.png";
 import Needle from "./Needle";
 
 function SubjectivityGauge(props: any) {

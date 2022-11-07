@@ -1,6 +1,6 @@
 //import { keyframes } from "styled-components";
-import {trimDecimals} from "../ts/utils";
-import "../css/Needle.scss";
+import {trimDecimals} from "../../ts/utils";
+import "./Needle.scss";
 
 function Needle(props: any) {
 
