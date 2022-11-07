@@ -4,7 +4,9 @@ import "./BubbleAndPopup.scss";
 function BubbleAndPopup(props: any) {
 
     const [isPaused, setPaused] = useState(false);
-        
+    const popDuration = 0.5;
+    const shrinkDelay = 0.3; 
+    const hangDelay = 1.5;    
     return (
         <div className="bubble-and-popup"
             style={{
@@ -15,19 +17,27 @@ function BubbleAndPopup(props: any) {
                 animationPlayState: isPaused ? "paused" : "running"
             }}  
             onMouseOver={() => setPaused(true)}
+            onMouseDown={() => handleMouseDown(setPaused, popDuration + shrinkDelay + hangDelay)}
             onMouseLeave={() => setPaused(false)}                  
         >
             {props.children}
             <props.popup 
                 pop={isPaused}
                 emoji={props.emoji}
+                popDuration={popDuration}
+                shrinkDuration={shrinkDelay}
             />
         </div>
     );
 };
 
-const handlePopupAnimation = () => {
-
+const handleMouseDown = (setPaused: Function, delay: number) => { //for mobile --- doesn't work, flashes too quickly
+    setPaused(true);
+    setTimeout(() => {
+        setPaused(false);
+    },
+        delay
+    );
 };
 
 export default BubbleAndPopup;
