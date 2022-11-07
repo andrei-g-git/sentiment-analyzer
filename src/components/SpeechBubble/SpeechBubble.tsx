@@ -1,5 +1,5 @@
 import {useState} from "react";
-import "../css/SpeechBubble.scss";
+import "./SpeechBubble.scss";
 
 function SpeechBubble(props: any) {
 

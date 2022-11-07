@@ -1,4 +1,4 @@
-import SpeechBubble from "./SpeechBubble";
+import SpeechBubble from "./SpeechBubble/SpeechBubble";
 import "../css/Top.scss";
 
 function Top() {
