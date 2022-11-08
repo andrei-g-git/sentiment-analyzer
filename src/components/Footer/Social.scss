@@ -1,0 +1,20 @@
+.social-container{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+
+    .social-media-icon{ 
+        width: 48px;
+        height: 48px;
+    }
+    .backslash{
+        width: 14px;
+        height: 24px;
+        background-image: url(../../assets/img/backslash-black.png);
+        background-position: center;
+        background-repeat: no-repeat; 
+        background-size: cover;
+        opacity: 0.4;
+    }
+}
