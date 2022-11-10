@@ -3,7 +3,8 @@ import {
     CONFIDENCE_CHANGED,
     TEXT_AREA_CHANGED,
     SUBJECTIVITY_CHANGED,
-    SCORE_CHANGED 
+    SCORE_CHANGED ,
+    EMOTIONS_CHANGED
 } from "./actionTypes";
 
 import { 
@@ -16,7 +17,19 @@ const initialState: ResultsState = {
     confidence: 0,
     analysisText: "",
     subjectivity: 0,
-    score: 1
+    score: 1,
+    emotions: {
+        fear: 0,
+        anger: 0,
+        anticipation: 0,
+        trust: 0,
+        surprise: 0,
+        positive: 0,
+        negative: 0,
+        sadness: 0,
+        disgust: 0,
+        joy: 0        
+    }
 };
 
 export const resultsReducer = (state: ResultsState = initialState, action: ReduxAction): ResultsState => {
@@ -45,7 +58,12 @@ export const resultsReducer = (state: ResultsState = initialState, action: Redux
             return{
                 ...state,
                 subjectivity: action.payload
-            };                    
+            };    
+        case EMOTIONS_CHANGED:
+            return{
+                ...state,
+                emotions: action.payload
+            };
         default:
             return state;
     }

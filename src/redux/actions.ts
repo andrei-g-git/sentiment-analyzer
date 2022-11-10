@@ -3,12 +3,16 @@ import {
     CONFIDENCE_CHANGED,
     TEXT_AREA_CHANGED,
     SCORE_CHANGED,
-    SUBJECTIVITY_CHANGED
+    SUBJECTIVITY_CHANGED,
+    EMOTIONS_CHANGED
 } from "./actionTypes";
 
 import {
     StringPayload,
-    NumberPayload
+    NumberPayload,
+    EmotionPayload,
+    HasStringKeys,
+    Emotions
 } from "./interface/reduxInderface";
 
 
@@ -44,5 +48,12 @@ export const textAreaChanged = (text: string): StringPayload => {
     return {
         type: TEXT_AREA_CHANGED,
         payload: text
+    };
+};
+
+export const emotionsChanged = (emotions: Emotions/* HasStringKeys<number | string> */): EmotionPayload => {
+    return{
+        type: EMOTIONS_CHANGED,
+        payload: emotions
     };
 };

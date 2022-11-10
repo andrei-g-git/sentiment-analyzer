@@ -13,6 +13,10 @@ export interface StringPayload {
     payload: string
 }
 
+export interface EmotionPayload {
+    type: string,
+    payload: Emotions/* HasStringKeys<string | number> */
+}
 export interface ReduxAction {
     type: string,
     payload: any
@@ -23,5 +27,23 @@ export interface ResultsState {
     confidence: number,
     analysisText: string,
     subjectivity: number,
-    score: number
+    score: number,
+    emotions: Emotions/* HasStringKeys<string | number> */
+}
+
+export interface Emotions {
+    fear: string | number,
+    anger: string | number,
+    anticipation: string | number,
+    trust: string | number,
+    surprise: string | number,
+    positive: string | number,
+    negative: string | number,
+    sadness: string | number,
+    disgust: string | number,
+    joy: string | number
+}
+
+export interface HasStringKeys<T>{
+    [key: string]: T
 }

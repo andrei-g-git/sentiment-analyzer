@@ -6,8 +6,10 @@ import {
     textAreaChanged, 
     sentimentChanged,
     scoreChanged,
-    subjectivityChanged 
+    subjectivityChanged,
+    emotionsChanged 
 } from '../redux/actions';
+import { HasStringKeys, Emotions } from '../redux/interface/reduxInderface';
 import "../css/AnalyzerForm.scss";
 
 export const AnalyzerForm = (props: any) => {
@@ -18,7 +20,8 @@ export const AnalyzerForm = (props: any) => {
                 props.text, 
                 props.changeScore,
                 props.changeSentiment,
-                props.changeSubjectivity
+                props.changeSubjectivity,
+                props.changeEmotions
             )}
         >
             <textarea className="analyzer-box"
@@ -37,7 +40,7 @@ export const AnalyzerForm = (props: any) => {
     );
 }
 
-const handleSubmit = (event: any, text: string, changeScore: Function, changeSentiment: Function, changeSubjectivity: Function) => {
+const handleSubmit = (event: any, text: string, changeScore: Function, changeSentiment: Function, changeSubjectivity: Function, changeEmotions: Function) => {
     event.preventDefault();
     console.log("text:   ", text);
 
@@ -52,11 +55,14 @@ const handleSubmit = (event: any, text: string, changeScore: Function, changeSen
         dataType: "text"
     })
         .then(response => {
-            console.log(response);
+            console.log("RESPONSE:::::   ", response);
             const res = JSON.parse(response)
+            console.log("ANTICIPATION>>>  ",res.emotions.anticipation)
+            console.log("object>>>  ",res)
             changeScore(res.score)
             changeSentiment(res.sentiment)
             changeSubjectivity(res.subjectivity)
+            changeEmotions(res.emotions)
         });
 };
 
@@ -79,8 +85,11 @@ const mapDispatchToProps = (dispatch: Dispatch) => {
         },
         changeSubjectivity: (value: number) => {
             dispatch(subjectivityChanged(value));
+        },
+        changeEmotions: (emotions: Emotions/* HasStringKeys<string | number> */) => {
+            dispatch(emotionsChanged(emotions));
         }                
     };
-}
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(AnalyzerForm)
