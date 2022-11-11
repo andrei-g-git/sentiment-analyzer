@@ -55,81 +55,81 @@ function Results(props: any) {
                     [
                         {
                             value: "Fear",
-                            color: "lightgray"
+                            color: ""//"lightgray"
                         },
                         {
                             value: props.emotions.fear.toFixed(2),
-                            color: "lightgray"
+                            color: ""//"lightgray"
                         }
                     ],
                     [
                         {
                             value: "Anger",
-                            color: "lightgray"
+                            color: ""//"lightgray"
                         },
                         {
                             value: props.emotions.anger.toFixed(2),
-                            color: "lightgray"
+                            color: ""//"lightgray"
                         }
                     ],
                     [
                         {
                             value: "Anticipation",
-                            color: "lightgray"
+                            color: ""//"lightgray"
                         },
                         {
                             value: props.emotions.anticipation.toFixed(2),
-                            color: "lightgray"
+                            color: ""//"lightgray"
                         }
                     ],
                     [
                         {
                             value: "Trust",
-                            color: "lightgray"
+                            color: ""//"lightgray"
                         },
                         {
                             value: props.emotions.trust.toFixed(2),
-                            color: "lightgray"
+                            color: ""//"lightgray"
                         }
                     ],
                     [
                         {
                             value: "Surprise",
-                            color: "lightgray"
+                            color: ""//"lightgray"
                         },
                         {
                             value: props.emotions.surprise.toFixed(2),
-                            color: "lightgray"
+                            color: ""//"lightgray"
                         }
                     ],
                     [
                         {
                             value: "Sadness",
-                            color: "lightgray"
+                            color: ""//"lightgray"
                         },
                         {
                             value: props.emotions.sadness.toFixed(2),
-                            color: "lightgray"
+                            color: ""//"lightgray"
                         }
                     ],
                     [
                         {
                             value: "Disgust",
-                            color: "lightgray"
+                            color: ""//"lightgray"
                         },
                         {
                             value: props.emotions.disgust.toFixed(2),
-                            color: "lightgray"
+                            color: ""//"lightgray"
                         }
                     ],
                     [
                         {
                             value: "Joy",
-                            color: "lightgray"
+                            color: ""//"lightgray"
                         },
                         {
                             value: props.emotions.joy.toFixed(2),
-                            color: "lightgray"
+                            color: ""//"lightgray"
                         }
                     ]               
                 ]}
