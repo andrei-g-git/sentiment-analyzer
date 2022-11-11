@@ -5,15 +5,30 @@ import LegendWithBar from './LegendWithBar';
 import LegendWithGraphic from './LegendWithGraphic';
 import SubjectivityGauge from '../Gauge/SubjectivityGauge';
 import DualValues from './DualValues';
+import { filterMaxValueInDict } from '../../ts/utils';
 import "./Results.scss";
 
 
 function Results(props: any) {
 
     const[rowValueColor, setRowValueColor] = useState("green");
+    const[emotionValueColors, setEmotionValueColors] = useState({});
     useEffect(() => {
         if(props.sentiment === "positive") setRowValueColor("green");
         if(props.sentiment === "negative") setRowValueColor("red");
+
+        const max = filterMaxValueInDict(props.emotions)[0];
+        let colorsObject: any;
+        colorsObject = Object.assign({}, props.emotions);
+        Object
+            .keys(colorsObject)
+            .forEach(key => {
+                colorsObject[key] = "";
+                if(props.emotions[key] === max){
+                    colorsObject[key] = "rgb(20, 20, 20)";
+                }
+            });
+        setEmotionValueColors(colorsObject);
     }, 
         [props.sentiment]
     );
@@ -55,81 +70,81 @@ function Results(props: any) {
                     [
                         {
                             value: "Fear",
-                            color: ""//"lightgray"
+                            color: emotionValueColors[""]//""//"lightgray"
                         },
                         {
                             value: props.emotions.fear.toFixed(2),
-                            color: ""//"lightgray"
+                            color: emotionValueColors[""]//""//"lightgray"
                         }
                     ],
                     [
                         {
                             value: "Anger",
-                            color: ""//"lightgray"
+                            color: emotionValueColors[""]//""//"lightgray"
                         },
                         {
                             value: props.emotions.anger.toFixed(2),
-                            color: ""//"lightgray"
+                            color: emotionValueColors[""]//""//"lightgray"
                         }
                     ],
                     [
                         {
                             value: "Anticipation",
-                            color: ""//"lightgray"
+                            color: emotionValueColors[""]//""//"lightgray"
                         },
                         {
                             value: props.emotions.anticipation.toFixed(2),
-                            color: ""//"lightgray"
+                            color: emotionValueColors[""]//""//"lightgray"
                         }
                     ],
                     [
                         {
                             value: "Trust",
-                            color: ""//"lightgray"
+                            color: emotionValueColors[""]//""//"lightgray"
                         },
                         {
                             value: props.emotions.trust.toFixed(2),
-                            color: ""//"lightgray"
+                            color: emotionValueColors[""]//""//"lightgray"
                         }
                     ],
                     [
                         {
                             value: "Surprise",
-                            color: ""//"lightgray"
+                            color: emotionValueColors[""]//""//"lightgray"
                         },
                         {
                             value: props.emotions.surprise.toFixed(2),
-                            color: ""//"lightgray"
+                            color: emotionValueColors[""]//""//"lightgray"
                         }
                     ],
                     [
                         {
                             value: "Sadness",
-                            color: ""//"lightgray"
+                            color: emotionValueColors[""]//""//"lightgray"
                         },
                         {
                             value: props.emotions.sadness.toFixed(2),
-                            color: ""//"lightgray"
+                            color: emotionValueColors[""]//""//"lightgray"
                         }
                     ],
                     [
                         {
                             value: "Disgust",
-                            color: ""//"lightgray"
+                            color: emotionValueColors[""]//""//"lightgray"
                         },
                         {
                             value: props.emotions.disgust.toFixed(2),
-                            color: ""//"lightgray"
+                            color: emotionValueColors[""]//""//"lightgray"
                         }
                     ],
                     [
                         {
                             value: "Joy",
-                            color: ""//"lightgray"
+                            color: emotionValueColors[""]//""//"lightgray"
                         },
                         {
                             value: props.emotions.joy.toFixed(2),
-                            color: ""//"lightgray"
+                            color: emotionValueColors[""]//""//"lightgray"
                         }
                     ]               
                 ]}
@@ -137,20 +152,12 @@ function Results(props: any) {
         </div>
     )
 }
-/* 
 
-    fear: string | number,
-    anger: string | number,
-    anticipation: string | number,
-    trust: string | number,
-    surprise: string | number,
-    positive: string | number,
-    negative: string | number,
-    sadness: string | number,
-    disgust: string | number,
-    joy: string | number
+const determineColor = (emotion: string): string => {
 
-*/
+    return "Ass"
+}
+
 const mapStateToProps = (state: any) => {
     return {
         score: state.results.score,
