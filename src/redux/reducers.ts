@@ -21,7 +21,8 @@ const initialState: ResultsState = {
     emotions: {
         fear: 0,
         anger: 0,
-        anticipation: 0,
+        //anticipation: 0,
+        anticip: 0,
         trust: 0,
         surprise: 0,
         positive: 0,

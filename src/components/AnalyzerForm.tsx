@@ -56,13 +56,16 @@ const handleSubmit = (event: any, text: string, changeScore: Function, changeSen
     })
         .then(response => {
             console.log("RESPONSE:::::   ", response);
-            const res = JSON.parse(response)
-            console.log("ANTICIPATION>>>  ",res.emotions.anticipation)
-            console.log("object>>>  ",res)
-            changeScore(res.score)
-            changeSentiment(res.sentiment)
-            changeSubjectivity(res.subjectivity)
-            changeEmotions(res.emotions)
+            const res = JSON.parse(response);
+            console.log("object>>>  ",res);
+            changeScore(res.score);
+            changeSentiment(res.sentiment);
+            changeSubjectivity(res.subjectivity);
+            delete res.emotions.positive;
+            delete res.emotions.negative;
+            delete res.emotions.neutral;
+            console.log("EMOTIONS>>>  ",res.emotions);
+            changeEmotions(res.emotions);
         });
 };
 

@@ -8,27 +8,40 @@ import DualValues from './DualValues';
 import { filterMaxValueInDict } from '../../ts/utils';
 import "./Results.scss";
 
-
 function Results(props: any) {
 
     const[rowValueColor, setRowValueColor] = useState("green");
-    const[emotionValueColors, setEmotionValueColors] = useState({});
+    const[emotionValueColors, setEmotionValueColors] = useState({
+        fear: "",
+        anger: "",
+        //anticipation: "",
+        anticip: "",
+        trust: "",
+        surprise: "",
+        positive: "",
+        negative: "",
+        sadness: "",
+        disgust: "",
+        joy: ""        
+    });
     useEffect(() => {
         if(props.sentiment === "positive") setRowValueColor("green");
         if(props.sentiment === "negative") setRowValueColor("red");
 
-        const max = filterMaxValueInDict(props.emotions)[0];
-        let colorsObject: any;
-        colorsObject = Object.assign({}, props.emotions);
-        Object
-            .keys(colorsObject)
-            .forEach(key => {
+        let max = filterMaxValueInDict(props.emotions);
+        max = parseFloat(max.toFixed(2));
+        console.log("PROPS DOT EMOTIONS: ````````````````````   \n", props.emotions);
+        console.log("MAX -------->   ", max)
+        let colorsObject: any = {};
+        Object.keys(props.emotions)
+            .forEach((key) => {
                 colorsObject[key] = "";
-                if(props.emotions[key] === max){
-                    colorsObject[key] = "rgb(20, 20, 20)";
-                }
+                if(parseFloat(props.emotions[key].toFixed(2)) === max){
+                    colorsObject[key] = "#000000";
+                }                
             });
         setEmotionValueColors(colorsObject);
+        console.log("COLORS OBJECT------------: \n", colorsObject)
     }, 
         [props.sentiment]
     );
@@ -70,81 +83,81 @@ function Results(props: any) {
                     [
                         {
                             value: "Fear",
-                            color: emotionValueColors[""]//""//"lightgray"
+                            color: ""
                         },
                         {
                             value: props.emotions.fear.toFixed(2),
-                            color: emotionValueColors[""]//""//"lightgray"
+                            color: emotionValueColors["fear"]//""//"lightgray"
                         }
                     ],
                     [
                         {
                             value: "Anger",
-                            color: emotionValueColors[""]//""//"lightgray"
+                            color: ""
                         },
                         {
                             value: props.emotions.anger.toFixed(2),
-                            color: emotionValueColors[""]//""//"lightgray"
+                            color: emotionValueColors["anger"]//""//"lightgray"
                         }
                     ],
                     [
                         {
                             value: "Anticipation",
-                            color: emotionValueColors[""]//""//"lightgray"
+                            color: ""
                         },
                         {
-                            value: props.emotions.anticipation.toFixed(2),
-                            color: emotionValueColors[""]//""//"lightgray"
+                            value: props.emotions.anticip/* ation */.toFixed(2),
+                            color: emotionValueColors["anticip"]//""//"lightgray"
                         }
                     ],
                     [
                         {
                             value: "Trust",
-                            color: emotionValueColors[""]//""//"lightgray"
+                            color: ""
                         },
                         {
                             value: props.emotions.trust.toFixed(2),
-                            color: emotionValueColors[""]//""//"lightgray"
+                            color: emotionValueColors["trust"]//""//"lightgray"
                         }
                     ],
                     [
                         {
                             value: "Surprise",
-                            color: emotionValueColors[""]//""//"lightgray"
+                            color: ""
                         },
                         {
                             value: props.emotions.surprise.toFixed(2),
-                            color: emotionValueColors[""]//""//"lightgray"
+                            color: emotionValueColors["surprise"]//""//"lightgray"
                         }
                     ],
                     [
                         {
                             value: "Sadness",
-                            color: emotionValueColors[""]//""//"lightgray"
+                            color: ""
                         },
                         {
                             value: props.emotions.sadness.toFixed(2),
-                            color: emotionValueColors[""]//""//"lightgray"
+                            color: emotionValueColors["sadness"]//""//"lightgray"
                         }
                     ],
                     [
                         {
                             value: "Disgust",
-                            color: emotionValueColors[""]//""//"lightgray"
+                            color: ""
                         },
                         {
                             value: props.emotions.disgust.toFixed(2),
-                            color: emotionValueColors[""]//""//"lightgray"
+                            color: emotionValueColors["disgust"]//""//"lightgray"
                         }
                     ],
                     [
                         {
                             value: "Joy",
-                            color: emotionValueColors[""]//""//"lightgray"
+                            color: ""
                         },
                         {
                             value: props.emotions.joy.toFixed(2),
-                            color: emotionValueColors[""]//""//"lightgray"
+                            color: emotionValueColors["joy"]//""//"lightgray"
                         }
                     ]               
                 ]}

@@ -34,7 +34,8 @@ export interface ResultsState {
 export interface Emotions {
     fear: string | number,
     anger: string | number,
-    anticipation: string | number,
+    //anticipation: string | number,
+    anticip: string | number,
     trust: string | number,
     surprise: string | number,
     positive: string | number,

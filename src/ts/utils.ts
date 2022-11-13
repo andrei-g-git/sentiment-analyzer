@@ -13,9 +13,10 @@ export const filterMaxValueInDict = (dict: DictWithNumbers) => {
         .sort((a: number, b: number) => a - b)
         .reverse()[0]
 
-    return Object
-        .keys(dict)
-        .filter((key: string) => {
-            return dict[key] === max;
-        });
+    // return Object
+    //     .keys(dict)
+    //     .filter((key: string) => {
+    //         return dict[key] === max;
+    //     });
+    return max;
 }
