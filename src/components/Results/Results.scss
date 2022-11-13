@@ -1,4 +1,5 @@
 @import "../../css/Variables.scss";
+@import "../../css/Mixins.scss";
 
 .results{
     display: flex;
@@ -13,6 +14,7 @@
     .section-title{
         padding: 0;
         margin: 0;
+        @include responsiveResultsHeadings();
     }
 
     // .results>*{

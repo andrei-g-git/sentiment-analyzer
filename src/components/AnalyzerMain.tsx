@@ -1,15 +1,16 @@
 import { connect } from 'react-redux';
 import AnalyzerForm from "./AnalyzerForm";
 import Results from './Results/Results';
+import MainHeading from './MainHeading';
 import "../css/AnalyzerMain.scss";
 
 
 export const AnalyzerMain = (props: any) => {
     return (
         <div className="analyzer">
-            <p className="text-area-indication">
-                Write your text below
-            </p>
+            <MainHeading>
+                Write something in the form...
+            </MainHeading>
             <div className="analyzer-main-content">
                 <AnalyzerForm />
                 <Results />              

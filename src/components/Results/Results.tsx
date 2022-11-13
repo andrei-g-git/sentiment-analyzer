@@ -1,12 +1,12 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { connect } from 'react-redux'
 import StarScore from "../StarScore";
 import LegendWithBar from './LegendWithBar';
 import LegendWithGraphic from './LegendWithGraphic';
 import SubjectivityGauge from '../Gauge/SubjectivityGauge';
 import DualValues from './DualValues';
-import { filterMaxValueInDict } from '../../ts/utils';
 import { useMaxValueColor } from './resultHooks';
+
 import "./Results.scss";
 
 function Results(props: any) {
@@ -32,7 +32,7 @@ function Results(props: any) {
     return (
         <div className="results">
             <p className="section-title">
-                Results                
+                Results:                
             </p>
 
             <LegendWithGraphic heading="Overall score:" >
