@@ -1,17 +1,25 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { connect } from 'react-redux'
 import StarScore from "../StarScore";
 import LegendWithBar from './LegendWithBar';
 import LegendWithGraphic from './LegendWithGraphic';
 import SubjectivityGauge from '../Gauge/SubjectivityGauge';
 import DualValues from './DualValues';
-import { useMaxValueColor } from './resultHooks';
+import { useMaxValueColor, useSentimentColor } from './resultHooks';
 
 import "./Results.scss";
 
 function Results(props: any) {
+      
+    const rowValueColor = useSentimentColor(
+        props.sentiment,
+        "positive",
+        "negative",
+        "green",
+        "red",
+        "black"
+    );
 
-    const[rowValueColor, setRowValueColor] = useState("green");
     let emotionValueColors = useMaxValueColor(
         props.sentiment, 
         props.emotions, 
@@ -31,9 +39,9 @@ function Results(props: any) {
 
     return (
         <div className="results">
-            <p className="section-title">
+            {/* <p className="section-title">
                 Results:                
-            </p>
+            </p> */}
 
             <LegendWithGraphic heading="Overall score:" >
                 <StarScore stars={Math.floor(props.score)} />

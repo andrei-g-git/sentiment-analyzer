@@ -4,7 +4,7 @@ import {EmotionColors} from "./resultsTypes";
 export const useMaxValueColor = (changingValue: string, emotions: {[key: string]: number}, initialState: EmotionColors) => {
     const[emotionValueColors, setEmotionValueColors] = useState(initialState);
 
-    useEffect(() => {
+    useEffect(() => { //this does a little too many things...
         let max: any = Object
             .values(emotions)
             .sort((a: number, b: number) => a - b)
@@ -29,3 +29,15 @@ export const useMaxValueColor = (changingValue: string, emotions: {[key: string]
 
     return emotionValueColors;
 };
+
+export const useSentimentColor = (sentiment: string, positiveSentiment: string, negativeSentiment: string, positiveColor: string, negativeColor: string, defaultColor: string) => {
+    const [color, setColor] = useState(defaultColor);
+    useEffect(() => {
+        if(sentiment === positiveSentiment) setColor(positiveColor);
+        if(sentiment === negativeSentiment) setColor(negativeColor);        
+    },
+        [sentiment]
+    );
+
+    return color;
+}
