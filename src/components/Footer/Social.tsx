@@ -1,6 +1,5 @@
 import github from "../../assets/img/github.png";
 import twitter from "../../assets/img/twitter.png";
-//import backslash from "../../assets/img/backslash.png";
 import "./Social.scss";
 
 function Social() {

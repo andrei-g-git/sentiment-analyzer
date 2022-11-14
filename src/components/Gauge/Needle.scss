@@ -1,13 +1,11 @@
 .needle{
     background-image: url(../../assets/img/needle.png);
     background-repeat: no-repeat;
-    background-size: 30px 70px;
+    background-size: 9px 60px;
     position: absolute;
-    width: 30px;
-    height: 70px;
-    transform-origin: 100% 100%;
-
-    //animation: turn-needle 2s forwards ease-in-out ;  
+    width: 9px;
+    height: 60px;
+    transform-origin: 50% 97%;
+    left: 76px;
+    top: 10px;
 }
-
-//no choice, styled-components doesn't work, transitions are too simplistic
