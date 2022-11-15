@@ -1,4 +1,4 @@
-export interface EmotionColors {
+export interface EmotionStringValues{
     fear: string,
     anger: string,
     anticip: string,

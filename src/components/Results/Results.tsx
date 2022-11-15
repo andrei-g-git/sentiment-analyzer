@@ -5,7 +5,8 @@ import LegendWithBar from './LegendWithBar';
 import LegendWithGraphic from './LegendWithGraphic';
 import SubjectivityGauge from '../Gauge/SubjectivityGauge';
 import DualValues from './DualValues';
-import { useMaxValueColor, useSentimentColor } from './resultHooks';
+import { useMaxValueColor, useMaxValueClass, useSentimentColor } from './resultHooks';
+import { filterMaxValueInDict } from '../../ts/utils';
 
 import "./Results.scss";
 
@@ -20,7 +21,7 @@ function Results(props: any) {
         "black"
     );
 
-    let emotionValueColors = useMaxValueColor(
+    let emotionValueClasses/* Colors */ = useMaxValueClass(//Color(
         props.sentiment, 
         props.emotions, 
         {
@@ -34,7 +35,8 @@ function Results(props: any) {
             sadness: "",
             disgust: "",
             joy: ""             
-        }        
+        },
+        filterMaxValueInDict        
     );
 
     return (
@@ -69,85 +71,102 @@ function Results(props: any) {
 
             <LegendWithBar headings={["Emotion range:"]} />
 
-            <DualValues values={[
+            <DualValues score={props.score} 
+                values={[
                     [
                         {
                             value: "Fear",
-                            color: ""
+                            //color: ""
+                            class: "non-max"
                         },
                         {
                             value: props.emotions.fear.toFixed(2),
-                            color: emotionValueColors["fear"]
+                            //color: emotionValueColors["fear"]
+                            class: emotionValueClasses["fear"]
                         }
                     ],
                     [
                         {
                             value: "Anger",
-                            color: ""
+                            //color: ""
+                            class: "non-max"
                         },
                         {
                             value: props.emotions.anger.toFixed(2),
-                            color: emotionValueColors["anger"]
+                            //color: emotionValueColors["anger"]
+                            class: emotionValueClasses["anger"]
                         }
                     ],
                     [
                         {
                             value: "Anticipation",
-                            color: ""
+                            //color: ""
+                            class: "non-max"
                         },
                         {
                             value: props.emotions.anticip/* ation */.toFixed(2),
-                            color: emotionValueColors["anticip"]
+                            //color: emotionValueColors["anticip"]
+                            class: emotionValueClasses["anticip"]
                         }
                     ],
                     [
                         {
                             value: "Trust",
-                            color: ""
+                            //color: ""
+                            class: "non-max"
                         },
                         {
                             value: props.emotions.trust.toFixed(2),
-                            color: emotionValueColors["trust"]
+                            //color: emotionValueColors["trust"]
+                            class: emotionValueClasses["trust"]
                         }
                     ],
                     [
                         {
                             value: "Surprise",
-                            color: ""
+                            //color: ""
+                            class: "non-max"
                         },
                         {
                             value: props.emotions.surprise.toFixed(2),
-                            color: emotionValueColors["surprise"]
+                            //color: emotionValueColors["surprise"]
+                            class: emotionValueClasses["surprise"]
                         }
                     ],
                     [
                         {
                             value: "Sadness",
-                            color: ""
+                            //color: ""
+                            class: "non-max"
                         },
                         {
                             value: props.emotions.sadness.toFixed(2),
-                            color: emotionValueColors["sadness"]
+                            //color: emotionValueColors["sadness"]
+                            class: emotionValueClasses["sadness"]
                         }
                     ],
                     [
                         {
                             value: "Disgust",
-                            color: ""
+                            //color: ""
+                            class: "non-max"
                         },
                         {
                             value: props.emotions.disgust.toFixed(2),
-                            color: emotionValueColors["disgust"]
+                            //color: emotionValueColors["disgust"]
+                            class: emotionValueClasses["disgust"]
                         }
                     ],
                     [
                         {
                             value: "Joy",
-                            color: ""
+                            //color: ""
+                            class: "non-max"
                         },
                         {
                             value: props.emotions.joy.toFixed(2),
-                            color: emotionValueColors["joy"]
+                            //color: emotionValueColors["joy"]
+                            class: emotionValueClasses["joy"]
                         }
                     ]               
                 ]}
