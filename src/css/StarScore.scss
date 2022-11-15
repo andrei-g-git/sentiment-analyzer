@@ -8,6 +8,48 @@
         width: 24px;
         height: 24px;        
     }
+}
 
+.full-star{
+    animation: pop-and-twirl 0.8s ease-in-out forwards;
+}
+
+@keyframes pop-and-twirl{ //apparently they get overriden individually
+    0%{
+        transform: scale(1.0, 1.0)
+            rotate(0deg);
+    }
+    40%{
+        transform: scale(1.5, 1.5)
+        rotate(45deg);
+    }
+    100%{
+        transform: scale(1.0, 1.0)
+        rotate(0deg);
+    }    
+}
+
+@keyframes pop {
+    0%{
+        transform: scale(1.0, 1.0);
+    }
+    40%{
+        transform: scale(1.5, 1.5);
+    }
+    100%{
+        transform: scale(1.0, 1.0);
+    }
+}
+
+@keyframes twirl {
+    0%{
+        transform: rotate(0deg);
+    }
+    40%{
+        transform: rotate(45deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
 }
 
