@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { connect } from 'react-redux'
-import StarScore from "../StarScore";
+import StarScore from "./StarScore";
 import LegendWithBar from './LegendWithBar';
 import LegendWithGraphic from './LegendWithGraphic';
 import SubjectivityGauge from '../Gauge/SubjectivityGauge';
@@ -44,7 +44,7 @@ function Results(props: any) {
             </p> */}
 
             <LegendWithGraphic heading="Overall score:" >
-                <StarScore stars={Math.floor(props.score)} />
+                <StarScore stars={props.score} /> {/* stars={Math.floor(props.score)} /> */}
             </LegendWithGraphic>
                  
             <LegendWithBar headings={["Sentiment", "Confidence"]} />
