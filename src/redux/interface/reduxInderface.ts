@@ -15,7 +15,7 @@ export interface StringPayload {
 
 export interface EmotionPayload {
     type: string,
-    payload: Emotions/* HasStringKeys<string | number> */
+    payload: /* Emotions */HasStringKeys<string | number>
 }
 export interface ReduxAction {
     type: string,
@@ -28,7 +28,7 @@ export interface ResultsState {
     analysisText: string,
     subjectivity: number,
     score: number,
-    emotions: Emotions/* HasStringKeys<string | number> */
+    emotions: /* Emotions */HasStringKeys<string | number>
 }
 
 export interface Emotions {

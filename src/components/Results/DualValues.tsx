@@ -18,7 +18,7 @@ function DualValues(props: any) {
         [props.sentiment]
     )
     
-    let count = useCount([props.score]); //the score is a granular float so the component will update more often, whereas the sentiment is binary and less likely to change
+    //let count = useCount([props.score]); //the score is a granular float so the component will update more often, whereas the sentiment is binary and less likely to change
 
     return (
         <div className="dual-values"

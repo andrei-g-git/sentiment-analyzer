@@ -9,7 +9,8 @@ import {
 
 import { 
     ResultsState,
-    ReduxAction 
+    ReduxAction,
+    HasStringKeys 
 } from "./interface/reduxInderface";
 
 const initialState: ResultsState = {
@@ -18,19 +19,20 @@ const initialState: ResultsState = {
     analysisText: "",
     subjectivity: 0,
     score: 1,
-    emotions: {
-        fear: 0,
-        anger: 0,
-        //anticipation: 0,
-        anticip: 0,
-        trust: 0,
-        surprise: 0,
-        positive: 0,
-        negative: 0,
-        sadness: 0,
-        disgust: 0,
-        joy: 0        
-    }
+    // emotions: {
+    //     fear: 0,
+    //     anger: 0,
+    //     //anticipation: 0,
+    //     anticip: 0,
+    //     trust: 0,
+    //     surprise: 0,
+    //     positive: 0,
+    //     negative: 0,
+    //     sadness: 0,
+    //     disgust: 0,
+    //     joy: 0        
+    // }
+    emotions: {placeholder: 0}
 };
 
 export const resultsReducer = (state: ResultsState = initialState, action: ReduxAction): ResultsState => {

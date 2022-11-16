@@ -51,7 +51,7 @@ export const textAreaChanged = (text: string): StringPayload => {
     };
 };
 
-export const emotionsChanged = (emotions: Emotions/* HasStringKeys<number | string> */): EmotionPayload => {
+export const emotionsChanged = (emotions: /* Emotions */HasStringKeys<number | string>): EmotionPayload => {
     return{
         type: EMOTIONS_CHANGED,
         payload: emotions

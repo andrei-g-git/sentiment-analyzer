@@ -1,5 +1,6 @@
 import {useState, useEffect} from "react";
 import {EmotionStringValues} from "./resultsTypes";
+import { HasStringKeys } from "../../redux/interface/reduxInderface";
 
 export const useMaxValueColor = (changingValue: string, emotions: {[key: string]: number}, initialState: EmotionStringValues) => {
     const[emotionValueColors, setEmotionValueColors] = useState(initialState);
@@ -33,7 +34,7 @@ export const useMaxValueColor = (changingValue: string, emotions: {[key: string]
 export const useMaxValueClass = ( //DRY
     changingValue: string, 
     emotions: {[key: string]: number}, 
-    initialState: EmotionStringValues,
+    initialState: HasStringKeys<string>,//EmotionStringValues,
     getMaxValue: Function
 ) => {
     const[emotionValueClasses, setEmotionValueClasses] = useState(initialState);

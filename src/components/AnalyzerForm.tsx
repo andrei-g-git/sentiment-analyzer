@@ -89,7 +89,7 @@ const mapDispatchToProps = (dispatch: Dispatch) => {
         changeSubjectivity: (value: number) => {
             dispatch(subjectivityChanged(value));
         },
-        changeEmotions: (emotions: Emotions/* HasStringKeys<string | number> */) => {
+        changeEmotions: (emotions: /* Emotions */HasStringKeys<string | number>) => {
             dispatch(emotionsChanged(emotions));
         }                
     };
