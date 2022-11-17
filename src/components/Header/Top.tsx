@@ -4,12 +4,33 @@ import SentimentPopup from "../SpeechBubble/SentimentPopup";
 import mad from "../../assets/img/bubble-mad.png";
 import neutral from "../../assets/img/bubble-neutral.png";
 import happy from "../../assets/img/bubble-happy.png";
+import { comments, commentProperties } from "../SpeechBubble/comments";
 import "./Top.scss";
 
 function Top() {
     return (
         <div className="top">
-            <BubbleAndPopup
+            {
+                comments.map((comment: any, index: number) => 
+                    <BubbleAndPopup
+                        slide={commentProperties[index].slide}
+                        animationDuration={commentProperties[index].duration}
+                        delay={commentProperties[index].delay}
+                        fillMode="backwards" 
+                        top={commentProperties[index].topBubble}
+                        popup={SentimentPopup}
+                        emoji={getEmoji(comment.sentiment)}
+                    >
+                        <SpeechBubble 
+                            text={comment.text} 
+                            position={commentProperties[index].position}
+                            top={commentProperties[index].topEmoji}
+                        />
+                    </BubbleAndPopup>
+                )
+            }
+
+            {/* <BubbleAndPopup
                 slide="right"
                 animationDuration={7}
                 delay={1}
@@ -57,10 +78,20 @@ function Top() {
                     top={30}
 
                 />                  
-            </BubbleAndPopup>
+            </BubbleAndPopup> */}
                   
         </div>
     );
+};
+
+const getEmoji = (sentiment: string) => {
+    switch(sentiment){
+        case "positive": return happy;
+        case "neutral": return neutral;
+        case "negative": return mad;
+        default: return happy;
+    }
+    return happy;
 };
 
 export default Top;
