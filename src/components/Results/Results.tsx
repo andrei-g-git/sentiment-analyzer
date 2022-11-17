@@ -8,6 +8,7 @@ import DualValues from './DualValues';
 import { useMaxValueColor, useMaxValueClass, useSentimentColor } from './resultHooks';
 import { filterMaxValueInDict } from '../../ts/utils';
 import { HasStringKeys } from '../../redux/interface/reduxInderface';
+import CssSpinner from '../loading/CssSpinner';
 import "./Results.scss";
 
 function Results(props: any) {
@@ -42,9 +43,7 @@ function Results(props: any) {
 
     return (
         <div className="results">
-            {/* <p className="section-title">
-                Results:                
-            </p> */}
+            <CssSpinner loading={true}/>
 
             <LegendWithGraphic heading="Overall score:" >
                 <StarScore stars={props.score} /> {/* stars={Math.floor(props.score)} /> */}

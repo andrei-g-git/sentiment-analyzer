@@ -1,0 +1,45 @@
+@import "../../css/Variables.scss";
+
+.loading-spinner-css{ 
+    width: 15%;
+    border: solid;
+    border-width: 10px;
+    border-radius: 50%;
+    border-color: gray;
+    border-top-color: blue;
+    animation: spin-uneven 1.5s linear infinite;
+
+    @media(max-width: map-get($breakpoints, "tablet")){
+        width: 10%;
+    }
+    @media(max-width: map-get($breakpoints, "mobile")){
+        width: 15%;
+    }
+
+    &::after{
+        content: "";
+        display: block;
+        padding-top: 100%;
+    }
+}
+
+@keyframes spin-uneven {
+    0%{
+        transform: rotate(0deg);
+    }
+    25%{
+        transform: rotate(30deg);
+    }
+    40%{
+        transform: rotate(90deg);
+    }
+    60%{
+        transform: rotate(240deg);
+    }
+    75%{
+        transform: rotate(330deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }                    
+}
