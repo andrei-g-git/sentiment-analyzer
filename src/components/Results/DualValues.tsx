@@ -16,9 +16,7 @@ function DualValues(props: any) {
         console.log("SENTIMENT:  ", props.sentiment)
     }, 
         [props.sentiment]
-    )
-    
-    //let count = useCount([props.score]); //the score is a granular float so the component will update more often, whereas the sentiment is binary and less likely to change
+    );
 
     return (
         <div className="dual-values"
@@ -29,9 +27,7 @@ function DualValues(props: any) {
                     <div className="value-row">
                         {
                             row.map((valueObject: ValueAndClass) => 
-                                <div className={`result-value ${valueObject.class}`}
-                                    //style={{color: valueObject.color}}
-                                >
+                                <div className={`result-value ${valueObject.class}`}>
                                     {valueObject.value}
                                 </div>                      
                             )                               

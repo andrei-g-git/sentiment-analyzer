@@ -2,6 +2,7 @@
 @import "../../css/Mixins.scss";
 
 .results{
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -16,10 +17,6 @@
         margin: 0;
         @include responsiveResultsHeadings();
     }
-
-    // .results>*{
-    //     margin: auto 0;
-    // }
 
     @media(max-width: map-get($breakpoints, "tablet")){
         border-left: none;

@@ -4,7 +4,8 @@ import {
     TEXT_AREA_CHANGED,
     SCORE_CHANGED,
     SUBJECTIVITY_CHANGED,
-    EMOTIONS_CHANGED
+    EMOTIONS_CHANGED,
+    LOADED
 } from "./actionTypes";
 
 import {
@@ -12,7 +13,8 @@ import {
     NumberPayload,
     EmotionPayload,
     HasStringKeys,
-    Emotions
+    Emotions,
+    BooleanPayload
 } from "./interface/reduxInderface";
 
 
@@ -55,5 +57,12 @@ export const emotionsChanged = (emotions: /* Emotions */HasStringKeys<number | s
     return{
         type: EMOTIONS_CHANGED,
         payload: emotions
+    };
+};
+
+export const loaded = (loading: boolean): BooleanPayload => {
+    return{
+        type: LOADED,
+        payload: loading
     };
 };

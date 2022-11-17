@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import { connect } from 'react-redux'
 import StarScore from "./StarScore";
 import LegendWithBar from './LegendWithBar';
@@ -8,8 +7,10 @@ import DualValues from './DualValues';
 import { useMaxValueColor, useMaxValueClass, useSentimentColor } from './resultHooks';
 import { filterMaxValueInDict } from '../../ts/utils';
 import { HasStringKeys } from '../../redux/interface/reduxInderface';
+import LoadContainer from '../loading/LoadContainer';
 import CssSpinner from '../loading/CssSpinner';
 import "./Results.scss";
+import "../../css/Common.scss";
 
 function Results(props: any) {
       
@@ -22,159 +23,58 @@ function Results(props: any) {
         "black"
     );
 
-    let emotionValueClasses/* Colors */ = useMaxValueClass(//Color(
+    let emotionValueClasses = useMaxValueClass(
         props.sentiment, 
         props.emotions, 
-        // {
-        //     fear: "",
-        //     anger: "",
-        //     anticip: "",
-        //     trust: "",
-        //     surprise: "",
-        //     positive: "",
-        //     negative: "",
-        //     sadness: "",
-        //     disgust: "",
-        //     joy: ""             
-        // },
         {},
         filterMaxValueInDict        
     );
 
     return (
         <div className="results">
-            <CssSpinner loading={true}/>
 
-            <LegendWithGraphic heading="Overall score:" >
-                <StarScore stars={props.score} /> {/* stars={Math.floor(props.score)} /> */}
-            </LegendWithGraphic>
-                 
-            <LegendWithBar headings={["Sentiment", "Confidence"]} />
+            <div className={"blur-container" + toggleLoadingClass(props.loading)}>
 
-            <DualValues values={[
-                    [
-                        {
-                            value: props.sentiment[0].toUpperCase() + props.sentiment.substring(1), 
-                            color: rowValueColor
-                        },
-                        {
-                            value: "n/a yet",
-                            color: ""
-                        }
-                    ]
-                ]} 
-            />
+                <LegendWithGraphic heading="Overall score:" >
+                    <StarScore stars={props.score} /> 
+                </LegendWithGraphic>
+                    
+                <LegendWithBar headings={["Sentiment", "Confidence"]} />
 
-            <LegendWithGraphic heading="Subjectivity:" >
-                <SubjectivityGauge subjectivity={props.subjectivity}/>
-            </LegendWithGraphic>
+                <DualValues values={[
+                        [
+                            {
+                                value: props.sentiment[0].toUpperCase() + props.sentiment.substring(1), 
+                                color: rowValueColor
+                            },
+                            {
+                                value: "n/a yet",
+                                color: ""
+                            }
+                        ]
+                    ]} 
+                />
 
-            <LegendWithBar headings={["Emotion range:"]} />
+                <LegendWithGraphic heading="Subjectivity:" >
+                    <SubjectivityGauge subjectivity={props.subjectivity}/>
+                </LegendWithGraphic>
 
-            <DualValues score={props.score} 
-                values={createValues(props.emotions, emotionValueClasses)}
-                // values={[
-                //     [
-                //         {
-                //             value: "Fear",
-                //             //color: ""
-                //             class: "non-max"
-                //         },
-                //         {
-                //             value: props.emotions.fear.toFixed(2),
-                //             //color: emotionValueColors["fear"]
-                //             class: emotionValueClasses["fear"]
-                //         }
-                //     ],
-                //     [
-                //         {
-                //             value: "Anger",
-                //             //color: ""
-                //             class: "non-max"
-                //         },
-                //         {
-                //             value: props.emotions.anger.toFixed(2),
-                //             //color: emotionValueColors["anger"]
-                //             class: emotionValueClasses["anger"]
-                //         }
-                //     ],
-                //     [
-                //         {
-                //             value: "Anticipation",
-                //             //color: ""
-                //             class: "non-max"
-                //         },
-                //         {
-                //             value: props.emotions.anticip/* ation */.toFixed(2),
-                //             //color: emotionValueColors["anticip"]
-                //             class: emotionValueClasses["anticip"]
-                //         }
-                //     ],
-                //     [
-                //         {
-                //             value: "Trust",
-                //             //color: ""
-                //             class: "non-max"
-                //         },
-                //         {
-                //             value: props.emotions.trust.toFixed(2),
-                //             //color: emotionValueColors["trust"]
-                //             class: emotionValueClasses["trust"]
-                //         }
-                //     ],
-                //     [
-                //         {
-                //             value: "Surprise",
-                //             //color: ""
-                //             class: "non-max"
-                //         },
-                //         {
-                //             value: props.emotions.surprise.toFixed(2),
-                //             //color: emotionValueColors["surprise"]
-                //             class: emotionValueClasses["surprise"]
-                //         }
-                //     ],
-                //     [
-                //         {
-                //             value: "Sadness",
-                //             //color: ""
-                //             class: "non-max"
-                //         },
-                //         {
-                //             value: props.emotions.sadness.toFixed(2),
-                //             //color: emotionValueColors["sadness"]
-                //             class: emotionValueClasses["sadness"]
-                //         }
-                //     ],
-                //     [
-                //         {
-                //             value: "Disgust",
-                //             //color: ""
-                //             class: "non-max"
-                //         },
-                //         {
-                //             value: props.emotions.disgust.toFixed(2),
-                //             //color: emotionValueColors["disgust"]
-                //             class: emotionValueClasses["disgust"]
-                //         }
-                //     ],
-                //     [
-                //         {
-                //             value: "Joy",
-                //             //color: ""
-                //             class: "non-max"
-                //         },
-                //         {
-                //             value: props.emotions.joy.toFixed(2),
-                //             //color: emotionValueColors["joy"]
-                //             class: emotionValueClasses["joy"]
-                //         }
-                //     ]               
-                // ]}
-            />           
+                <LegendWithBar headings={["Emotion range:"]} />
+
+                <DualValues score={props.score} 
+                    values={createValues(props.emotions, emotionValueClasses)}
+                />               
+            </div>    
+
+            <CssSpinner loading={props.loading}/>     
         </div>
     )
 }
+
+const toggleLoadingClass = (loading: boolean) => {
+    console.log("LOADDING?????   ", loading);
+    return loading? " blurred-light" : ""; //I have no idea why this only works as a function and not written directly into the tsx...
+};
 
 const createValues = (emotions: HasStringKeys<number>, classes: HasStringKeys<string>) => {
     let values: any[][]= [];
@@ -198,7 +98,8 @@ const mapStateToProps = (state: any) => {
         score: state.results.score,
         subjectivity: state.results.subjectivity,
         sentiment: state.results.sentiment,
-        emotions: state.results.emotions
+        emotions: state.results.emotions,
+        loading: state.results.loading
     };
 }
 

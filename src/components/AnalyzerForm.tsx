@@ -7,7 +7,8 @@ import {
     sentimentChanged,
     scoreChanged,
     subjectivityChanged,
-    emotionsChanged 
+    emotionsChanged,
+    loaded
 } from '../redux/actions';
 import { HasStringKeys, Emotions } from '../redux/interface/reduxInderface';
 import "../css/AnalyzerForm.scss";
@@ -21,7 +22,8 @@ export const AnalyzerForm = (props: any) => {
                 props.changeScore,
                 props.changeSentiment,
                 props.changeSubjectivity,
-                props.changeEmotions
+                props.changeEmotions,
+                props.toggleLoading
             )}
         >
             <textarea className="analyzer-box"
@@ -40,13 +42,15 @@ export const AnalyzerForm = (props: any) => {
     );
 }
 
-const handleSubmit = (event: any, text: string, changeScore: Function, changeSentiment: Function, changeSubjectivity: Function, changeEmotions: Function) => {
+const handleSubmit = (event: any, text: string, changeScore: Function, changeSentiment: Function, changeSubjectivity: Function, changeEmotions: Function, toggleLoading: Function) => {
     event.preventDefault();
     console.log("text:   ", text);
 
     const data = JSON.stringify({
         text: text
     });
+
+    toggleLoading(true);
 
     $.ajax({
         url:"http://localhost:9999/analyze",
@@ -66,6 +70,7 @@ const handleSubmit = (event: any, text: string, changeScore: Function, changeSen
             delete res.emotions.neutral;
             console.log("EMOTIONS>>>  ",res.emotions);
             changeEmotions(res.emotions);
+            toggleLoading(false);
         });
 };
 
@@ -91,6 +96,9 @@ const mapDispatchToProps = (dispatch: Dispatch) => {
         },
         changeEmotions: (emotions: /* Emotions */HasStringKeys<string | number>) => {
             dispatch(emotionsChanged(emotions));
+        },
+        toggleLoading: (loading: boolean) => {
+            dispatch(loaded(loading));
         }                
     };
 };

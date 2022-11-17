@@ -1,7 +1,12 @@
 @import "../../css/Variables.scss";
+//@import "../../css/Mixins.scss";
 
 .loading-spinner-css{ 
     width: 15%;
+    //@include centerAbsolute(50%, 50%, 15%, 0);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     border: solid;
     border-width: 10px;
     border-radius: 50%;
