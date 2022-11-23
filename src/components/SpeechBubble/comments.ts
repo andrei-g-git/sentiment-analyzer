@@ -64,14 +64,14 @@ export const commentProperties= [
         duration: 15,
         delay: 1,
         topBubble: 25,
-        topEmoji: 32,
+        topEmoji: 35,
         position: "top-left" 
     },
     {
         slide: "left",
         duration: 12,
         delay: 0,
-        topBubble: 18,
+        topBubble: 20,
         topEmoji: 15,
         position: "bottom-right"  
     }    

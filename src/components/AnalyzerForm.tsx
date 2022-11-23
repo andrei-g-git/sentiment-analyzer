@@ -53,10 +53,14 @@ const handleSubmit = (event: any, text: string, changeScore: Function, changeSen
     toggleLoading(true);
 
     $.ajax({
-        url:"http://localhost:9999/analyze",
+        //url:"http://localhost:9999/analyze",
+        //url:"http://localhost:5000/analyze",
+        //url: "https://restapiaccount.pythonanywhere.com/analyze",
+        url: "http://andreigiura.com/analyze",
         type: "POST",
         data: data,
-        dataType: "text"
+        dataType: "text",
+        contentType: "application/json"
     })
         .then(response => {
             console.log("RESPONSE:::::   ", response);

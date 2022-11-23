@@ -20,8 +20,8 @@ $additional-y-offset: 5%;
 }
 
 @mixin bubbleTrianglesAtPositionY(){
-    @for $i from 1 through 3{
-        .top-right-#{$i*10}:before {
+    @for $i from 1 through 7{
+        .top-right-#{$i*5}:before {
             @include triangle(
                 10px solid #00bfb6,
                 10px solid transparent,
@@ -32,7 +32,7 @@ $additional-y-offset: 5%;
             );
         }
         
-        .top-right-#{$i*10}:after {
+        .top-right-#{$i*5}:after {
             @include triangle(
                 7px solid color.scale($header-bg-max, $lightness: calc(5% + $i * $height-percent-increment + $additional-y-offset)),
                 7px solid transparent,
@@ -43,7 +43,7 @@ $additional-y-offset: 5%;
             );
         }
         
-        .bottom-right-#{$i*10}:before {
+        .bottom-right-#{$i*5}:before {
             @include triangle(
                 10px solid #00bfb6,
                 10px solid transparent,
@@ -54,7 +54,7 @@ $additional-y-offset: 5%;
             );
         }
         
-        .bottom-right-#{$i*10}:after {
+        .bottom-right-#{$i*5}:after {
             @include triangle(
                 6px solid color.scale($header-bg-max, $lightness: calc(25% + $i * $height-percent-increment + $additional-y-offset)),
                 6px solid transparent,
@@ -65,7 +65,7 @@ $additional-y-offset: 5%;
             );
         }
         
-        .top-left-#{$i*10}:before {
+        .top-left-#{$i*5}:before {
             @include triangle(
                 10px solid transparent,
                 10px solid #00bfb6,
@@ -76,7 +76,7 @@ $additional-y-offset: 5%;
             );
         }
         
-        .top-left-#{$i*10}:after {
+        .top-left-#{$i*5}:after {
             @include triangle(
                 6px solid transparent,
                 6px solid color.scale($header-bg-max, $lightness: calc(5% + $i * $height-percent-increment + $additional-y-offset)),
@@ -87,7 +87,7 @@ $additional-y-offset: 5%;
             );
         }
         
-        .bottom-left-#{$i*10}:before {
+        .bottom-left-#{$i*5}:before {
             @include triangle(
                 10px solid transparent,
                 10px solid #00bfb6,
@@ -98,7 +98,7 @@ $additional-y-offset: 5%;
             );
         }
         
-        .bottom-left-#{$i*10}:after {
+        .bottom-left-#{$i*5}:after {
             @include triangle(
                 6px solid transparent,
                 6px solid color.scale($header-bg-max, $lightness: calc(25% + $i * $height-percent-increment + $additional-y-offset)),
