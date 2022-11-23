@@ -10,7 +10,7 @@ import "./Top.scss";
 function Top() {
     return (
         <div className="top">
-            {
+            {/* {
                 comments.map((comment: any, index: number) => 
                     <BubbleAndPopup
                         slide={commentProperties[index].slide}
@@ -28,7 +28,7 @@ function Top() {
                         />
                     </BubbleAndPopup>
                 )
-            }
+            } */}
 
             {/* <BubbleAndPopup
                 slide="right"
