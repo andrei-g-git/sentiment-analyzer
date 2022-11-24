@@ -53,9 +53,6 @@ const handleSubmit = (event: any, text: string, changeScore: Function, changeSen
     toggleLoading(true);
 
     $.ajax({
-        //url:"http://localhost:9999/analyze",
-        //url:"http://localhost:5000/analyze",
-        //url: "https://restapiaccount.pythonanywhere.com/analyze",
         url: "http://andreigiura.com/analyze",
         type: "POST",
         data: data,
@@ -98,7 +95,7 @@ const mapDispatchToProps = (dispatch: Dispatch) => {
         changeSubjectivity: (value: number) => {
             dispatch(subjectivityChanged(value));
         },
-        changeEmotions: (emotions: /* Emotions */HasStringKeys<string | number>) => {
+        changeEmotions: (emotions: HasStringKeys<string | number>) => {
             dispatch(emotionsChanged(emotions));
         },
         toggleLoading: (loading: boolean) => {
