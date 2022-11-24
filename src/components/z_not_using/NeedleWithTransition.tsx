@@ -1,4 +1,4 @@
-import {trimDecimals} from "../ts/utils";
+import {trimDecimals} from "../../ts/utils";
 import "../css/Needle.scss";
 
 function NeedleWithTransition(props: any) {
