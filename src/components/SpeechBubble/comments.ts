@@ -29,7 +29,7 @@ export const comments = [
 export const commentProperties= [
     {
         slide: "left",
-        duration: 7,
+        duration: 10,//7,
         delay: 0,
         topBubble: 15,
         topEmoji: 10,
@@ -37,40 +37,40 @@ export const commentProperties= [
     },
     {
         slide: "right",
-        duration: 10,
-        delay: 2,
+        duration: 12,//10,
+        delay: 4,//2,
         topBubble: 30,
         topEmoji: 20,
         position: "bottom-left"//"bottom-right"  
     },
     {
         slide: "left",
-        duration: 6,
-        delay: 1,
+        duration: 9.5,//6,
+        delay: 2.5,//1,
         topBubble: 20,
         topEmoji: 30,
         position: "bottom-right"  
     },
     {
         slide: "left",
-        duration: 15,
-        delay: 0.5,
+        duration: 16.5,//15,
+        delay: 1.5,
         topBubble: 10,
         topEmoji: 15,
         position: "bottom-right"  
     },
     {
         slide: "right",
-        duration: 15,
-        delay: 1,
+        duration: 16.5,//15,
+        delay: 3,//1,
         topBubble: 25,
         topEmoji: 35,
         position: "bottom-left",//"top-left" 
     },
     {
         slide: "left",
-        duration: 12,
-        delay: 0,
+        duration: 13.5,//12,
+        delay: 1,//0,
         topBubble: 20,
         topEmoji: 15,
         position: "bottom-right"  
