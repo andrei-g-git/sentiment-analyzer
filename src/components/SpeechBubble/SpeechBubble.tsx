@@ -8,7 +8,7 @@ function SpeechBubble(props: any) {
     return (
         <div className={`bubble-container 
                 corner-${props.position}            
-                ${props.position}-${props.top}`             
+                ${props.position}`//-${props.top}`             
             }
         >
             {props.text}

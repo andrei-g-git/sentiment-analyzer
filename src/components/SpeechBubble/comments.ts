@@ -33,7 +33,7 @@ export const commentProperties= [
         delay: 0,
         topBubble: 15,
         topEmoji: 10,
-        position: "top-left" 
+        position: "bottom-right"//"top-left" 
     },
     {
         slide: "right",
@@ -41,7 +41,7 @@ export const commentProperties= [
         delay: 2,
         topBubble: 30,
         topEmoji: 20,
-        position: "bottom-right"  
+        position: "bottom-left"//"bottom-right"  
     },
     {
         slide: "left",
@@ -57,7 +57,7 @@ export const commentProperties= [
         delay: 0.5,
         topBubble: 10,
         topEmoji: 15,
-        position: ""  
+        position: "bottom-right"  
     },
     {
         slide: "right",
@@ -65,7 +65,7 @@ export const commentProperties= [
         delay: 1,
         topBubble: 25,
         topEmoji: 35,
-        position: "top-left" 
+        position: "bottom-left",//"top-left" 
     },
     {
         slide: "left",

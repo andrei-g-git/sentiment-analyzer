@@ -53,7 +53,8 @@ const handleSubmit = (event: any, text: string, changeScore: Function, changeSen
     toggleLoading(true);
 
     $.ajax({
-        url: "http://andreigiura.com/analyze",
+        //url: "http://andreigiura.com/analyze",
+        url: "http://localhost:5000/analyze",
         type: "POST",
         data: data,
         dataType: "text",

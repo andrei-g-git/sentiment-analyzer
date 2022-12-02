@@ -19,110 +19,109 @@ $additional-y-offset: 5%;
     top: $offsetTop;
 }
 
-@mixin bubbleTrianglesAtPositionY(){
-    @for $i from 1 through 7{
-        .top-right-#{$i*5}:before {
-            @include triangle(
-                10px solid #00bfb6,
-                10px solid transparent,
-                10px solid #00bfb6,
-                10px solid transparent,
-                -21px,
-                -4px
-            );
-        }
-        
-        .top-right-#{$i*5}:after {
-            @include triangle(
-                7px solid color.scale($header-bg-max, $lightness: calc(5% + $i * $height-percent-increment + $additional-y-offset)),
-                7px solid transparent,
-                7px solid color.scale($header-bg-max, $lightness: calc(5% + $i * $height-percent-increment + $additional-y-offset)),
-                7px solid transparent,
-                -11px,
-                0
-            );
-        }
-        
-        .bottom-right-#{$i*5}:before {
-            @include triangle(
-                10px solid #00bfb6,
-                10px solid transparent,
-                10px solid transparent,
-                10px solid #00bfb6,
-                -21px,
-                calc(100% - 15px - 1px)
-            );
-        }
-        
-        .bottom-right-#{$i*5}:after {
-            @include triangle(
-                6px solid color.scale($header-bg-max, $lightness: calc(25% + $i * $height-percent-increment + $additional-y-offset)),
-                6px solid transparent,
-                6px solid transparent,
-                6px solid color.scale($header-bg-max, $lightness: calc(25% + $i * $height-percent-increment + $additional-y-offset)),
-                calc(-11px - 4px + 3px),
-                calc(100% - 7px - 5px)
-            );
-        }
-        
-        .top-left-#{$i*5}:before {
-            @include triangle(
-                10px solid transparent,
-                10px solid #00bfb6,
-                10px solid #00bfb6,
-                10px solid transparent,
-                100%,
-                -4px
-            );
-        }
-        
-        .top-left-#{$i*5}:after {
-            @include triangle(
-                6px solid transparent,
-                6px solid color.scale($header-bg-max, $lightness: calc(5% + $i * $height-percent-increment + $additional-y-offset)),
-                6px solid color.scale($header-bg-max, $lightness: calc(5% + $i * $height-percent-increment + $additional-y-offset)),
-                6px solid transparent,
-                100%,
-                0
-            );
-        }
-        
-        .bottom-left-#{$i*5}:before {
-            @include triangle(
-                10px solid transparent,
-                10px solid #00bfb6,
-                10px solid transparent,
-                10px solid #00bfb6,
-                100%,
-                calc(100% - 15px - 1px)
-            );
-        }
-        
-        .bottom-left-#{$i*5}:after {
-            @include triangle(
-                6px solid transparent,
-                6px solid color.scale($header-bg-max, $lightness: calc(25% + $i * $height-percent-increment + $additional-y-offset)),
-                6px solid transparent,
-                6px solid color.scale($header-bg-max, $lightness: calc(25% + $i * $height-percent-increment + $additional-y-offset)),
-                100%,
-                calc(100% - 7px - 5px)
-            );
-        }
-    }
+
+.top-right:before {
+    @include triangle(
+        10px solid $speech-bubble-border-color,
+        10px solid transparent,
+        10px solid $speech-bubble-border-color,
+        10px solid transparent,
+        -21px,
+        -4px
+    );
 }
+
+.top-right:after {
+    @include triangle(
+        7px solid $speech-bubble-bg,
+        7px solid transparent,
+        7px solid $speech-bubble-bg,
+        7px solid transparent,
+        -11px,
+        0
+    );
+}
+
+.bottom-right:before {
+    @include triangle(
+        10px solid $speech-bubble-border-color,
+        10px solid transparent,
+        10px solid transparent,
+        10px solid $speech-bubble-border-color,
+        -21px,
+        calc(100% - 15px - 1px)
+    );
+}
+
+.bottom-right:after {
+    @include triangle(
+        6px solid $speech-bubble-bg,
+        6px solid transparent,
+        6px solid transparent,
+        6px solid $speech-bubble-bg,
+        calc(-11px - 4px + 3px),
+        calc(100% - 7px - 5px)
+    );
+}
+
+.top-left:before {
+    @include triangle(
+        10px solid transparent,
+        10px solid $speech-bubble-border-color,
+        10px solid $speech-bubble-border-color,
+        10px solid transparent,
+        100%,
+        -4px
+    );
+}
+
+.top-left:after {
+    @include triangle(
+        6px solid transparent,
+        6px solid $speech-bubble-bg,
+        6px solid $speech-bubble-bg,
+        6px solid transparent,
+        100%,
+        0
+    );
+}
+
+.bottom-left:before {
+    @include triangle(
+        10px solid transparent,
+        10px solid $speech-bubble-border-color,
+        10px solid transparent,
+        10px solid $speech-bubble-border-color,
+        100%,
+        calc(100% - 15px - 1px)
+    );
+}
+
+.bottom-left:after {
+    @include triangle(
+        6px solid transparent,
+        6px solid $speech-bubble-bg,
+        6px solid transparent,
+        6px solid $speech-bubble-bg,
+        100%,
+        calc(100% - 7px - 5px)
+    );
+}
+
 
 .bubble-container {
     width: 150px;
-    border: 4px solid #00bfb6;
+    border: 4px solid #dbc397;//#00bfb6;
     border-radius: 12px;
     padding: 8px;//15px;
     text-align: center;
     font-weight: bold; //900;
-    color: #00bfb6;
+    color: $speech-buble-text-color;
     font-family: arial;
     font-size: small;
     position: relative;
 
+    background-color: $speech-bubble-bg;
 }
 
 .corner-top-right {
@@ -142,5 +141,110 @@ $additional-y-offset: 5%;
 }
 
 
+
+
+
+
+
+
+// @mixin bubbleTrianglesAtPositionY(){
+//     @for $i from 1 through 7{
+//         .top-right-#{$i*5}:before {
+//             @include triangle(
+//                 10px solid #00bfb6,
+//                 10px solid transparent,
+//                 10px solid #00bfb6,
+//                 10px solid transparent,
+//                 -21px,
+//                 -4px
+//             );
+//         }
+        
+//         .top-right-#{$i*5}:after {
+//             @include triangle(
+//                 7px solid color.scale($header-bg-max, $lightness: calc(5% + $i * $height-percent-increment + $additional-y-offset)),
+//                 7px solid transparent,
+//                 7px solid color.scale($header-bg-max, $lightness: calc(5% + $i * $height-percent-increment + $additional-y-offset)),
+//                 7px solid transparent,
+//                 -11px,
+//                 0
+//             );
+//         }
+        
+//         .bottom-right-#{$i*5}:before {
+//             @include triangle(
+//                 10px solid #00bfb6,
+//                 10px solid transparent,
+//                 10px solid transparent,
+//                 10px solid #00bfb6,
+//                 -21px,
+//                 calc(100% - 15px - 1px)
+//             );
+//         }
+        
+//         .bottom-right-#{$i*5}:after {
+//             @include triangle(
+//                 6px solid color.scale($header-bg-max, $lightness: calc(25% + $i * $height-percent-increment + $additional-y-offset)),
+//                 6px solid transparent,
+//                 6px solid transparent,
+//                 6px solid color.scale($header-bg-max, $lightness: calc(25% + $i * $height-percent-increment + $additional-y-offset)),
+//                 calc(-11px - 4px + 3px),
+//                 calc(100% - 7px - 5px)
+//             );
+//         }
+        
+//         .top-left-#{$i*5}:before {
+//             @include triangle(
+//                 10px solid transparent,
+//                 10px solid #00bfb6,
+//                 10px solid #00bfb6,
+//                 10px solid transparent,
+//                 100%,
+//                 -4px
+//             );
+//         }
+        
+//         .top-left-#{$i*5}:after {
+//             @include triangle(
+//                 6px solid transparent,
+//                 6px solid color.scale($header-bg-max, $lightness: calc(5% + $i * $height-percent-increment + $additional-y-offset)),
+//                 6px solid color.scale($header-bg-max, $lightness: calc(5% + $i * $height-percent-increment + $additional-y-offset)),
+//                 6px solid transparent,
+//                 100%,
+//                 0
+//             );
+//         }
+        
+//         .bottom-left-#{$i*5}:before {
+//             @include triangle(
+//                 10px solid transparent,
+//                 10px solid #00bfb6,
+//                 10px solid transparent,
+//                 10px solid #00bfb6,
+//                 100%,
+//                 calc(100% - 15px - 1px)
+//             );
+//         }
+        
+//         .bottom-left-#{$i*5}:after {
+//             @include triangle(
+//                 6px solid transparent,
+//                 6px solid color.scale($header-bg-max, $lightness: calc(25% + $i * $height-percent-increment + $additional-y-offset)),
+//                 6px solid transparent,
+//                 6px solid color.scale($header-bg-max, $lightness: calc(25% + $i * $height-percent-increment + $additional-y-offset)),
+//                 100%,
+//                 calc(100% - 7px - 5px)
+//             );
+//         }
+//     }
+// }
+
+
+
+
+
+
+
+
 //########################
-@include bubbleTrianglesAtPositionY();
+//@include bubbleTrianglesAtPositionY();

@@ -1,6 +1,12 @@
-.bubble-and-popup{
-    position: relative;
+.bubble-and-popup-container{
+    position: absolute;
+
+    .bubble-and-popup{
+        position: relative;
+    }    
 }
+
+
 
 @keyframes slide-right {
     from {
