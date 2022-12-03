@@ -17,9 +17,11 @@ $placeholder-font-size: small;
 
 $standard-heading-weight: bold;
 
-$speech-bubble-border-color: #dbc397;
+// $speech-bubble-border-color: #dbc397;
+// $speech-bubble-bg: lightgray;
+$speech-bubble-border-color: #c4d6ac;
+$speech-bubble-bg: #c4d6ac;
 $speech-buble-text-color: gray;
-$speech-bubble-bg: lightgray;
 
 //breakpoints
 $breakpoints: (
