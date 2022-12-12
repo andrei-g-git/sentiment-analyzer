@@ -1,30 +1,28 @@
-// .microphone{ 
-
-// }
-
 @mixin mic($url){
     position: relative;
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
     background-image: $url;
-    
-    &::after{
-        content: "";
-        position: absolute;
-        top: 50%;
-        left: 50%;
+
+    .mic-wave{
+        position: absolute; //this doesn't actually absolutely positions it...
+        width: 150px;
+        height: 150px;
+        // top: 50%;
+        // left: 50%;
+        // top: -75px;
+        // left: -75px;
         transform: translate3d(-50%, -50%);
+        background-color: #d66679;
+        opacity: 0.5;
+        border: 1px solid #d66679;    
         border-radius: 50%;
-        border-color: #d66679;
-        border-style: solid;
-        &:target{
-            animation: radial-wave 1s forwards ease-in-out;
-        }   
-    }
- 
+
+        animation: radial-wave 1s forwards ease-in-out;    
+    } 
 }
 
 .red-mic{
@@ -34,8 +32,6 @@
 .black-mic{
     @include mic(url(../../assets/img/mic-black.png));
 }
-
-
 
 @keyframes radial-wave {
     0%{
