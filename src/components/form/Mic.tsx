@@ -3,13 +3,17 @@ import { connect } from 'react-redux';
 import {
     recording
 } from '../../redux/actions';
+import {useSpeech} from "./micHooks";
 import "./Mic.scss";
 
 export const Mic = (props: any) => {
+
+    useSpeech(props.isRecording);
+
     return (
-        <div className={getMicClass(props.isRecording)} //it's a hyperlink so I can use the :target pseudo class
+        <div className={getMicClass(props.isRecording)} 
             onClick={() => props.toggleMic(!props.isRecording)}
-            tabIndex={-1} //for click, :active is for mouse-down...
+            tabIndex={-1} //for click, :active is for mouse-down... --- not using anymore
         >
             <div className={getWaveClass(props.isRecording)}></div>
         </div>
@@ -17,10 +21,6 @@ export const Mic = (props: any) => {
 };
 
 const getMicClass = (isRecording: boolean): string => { //no idea why ternary expressions don't work...
-    // const baseClass = "microphone";
-    // let extraClass = " black-mic";
-    // if(isRecording) extraClass = " red-mic"
-    // return baseClass + extraClass;
     if(isRecording) return "red-mic";
     return "black-mic";
 };
