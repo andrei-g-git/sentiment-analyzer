@@ -5,7 +5,8 @@ import {
     SUBJECTIVITY_CHANGED,
     SCORE_CHANGED ,
     EMOTIONS_CHANGED,
-    LOADED
+    LOADED,
+    RECORDING
 } from "./actionTypes";
 
 import { 
@@ -34,7 +35,8 @@ const initialState: ResultsState = {
     //     joy: 0        
     // }
     emotions: {placeholder: 0},
-    loading: false
+    loading: false,
+    recording: false
 };
 
 export const resultsReducer = (state: ResultsState = initialState, action: ReduxAction): ResultsState => {
@@ -74,6 +76,11 @@ export const resultsReducer = (state: ResultsState = initialState, action: Redux
                 ...state,
                 loading: action.payload
             };
+        case RECORDING:
+            return{
+                ...state,
+                recording: action.payload
+            }
         default:
             return state;
     }

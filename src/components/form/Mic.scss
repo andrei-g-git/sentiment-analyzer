@@ -1,0 +1,57 @@
+// .microphone{ 
+
+// }
+
+@mixin mic($url){
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-image: $url;
+    
+    &::after{
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate3d(-50%, -50%);
+        border-radius: 50%;
+        border-color: #d66679;
+        border-style: solid;
+        &:target{
+            animation: radial-wave 1s forwards ease-in-out;
+        }   
+    }
+ 
+}
+
+.red-mic{
+    @include mic(url(../../assets/img/mic-red.png));
+}
+
+.black-mic{
+    @include mic(url(../../assets/img/mic-black.png));
+}
+
+
+
+@keyframes radial-wave {
+    0%{
+        transform: scale(0);
+    }
+    25%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(0);
+    }
+    75%{
+        transform: scale(1);
+    }  
+    100%{
+        transform: scale(0);
+    }      
+}
+

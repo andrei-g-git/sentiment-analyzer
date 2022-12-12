@@ -5,7 +5,8 @@ import {
     SCORE_CHANGED,
     SUBJECTIVITY_CHANGED,
     EMOTIONS_CHANGED,
-    LOADED
+    LOADED,
+    RECORDING
 } from "./actionTypes";
 
 import {
@@ -64,5 +65,12 @@ export const loaded = (loading: boolean): BooleanPayload => {
     return{
         type: LOADED,
         payload: loading
+    };
+};
+
+export const recording = (recording: boolean): BooleanPayload => {
+    return{
+        type: RECORDING,
+        payload: recording
     };
 };

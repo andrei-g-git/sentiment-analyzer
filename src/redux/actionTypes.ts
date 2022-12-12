@@ -7,3 +7,5 @@ export const EMOTIONS_CHANGED = "EMOTIONS_CHANGED";
 export const TEXT_AREA_CHANGED = "TEXT_AREA_CHANGED";
 
 export const LOADED = "LOADED";
+
+export const RECORDING = "RECORDING";

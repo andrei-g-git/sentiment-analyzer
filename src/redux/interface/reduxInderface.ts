@@ -29,7 +29,8 @@ export interface ResultsState {
     subjectivity: number,
     score: number,
     emotions: /* Emotions */HasStringKeys<string | number>,
-    loading: boolean
+    loading: boolean,
+    recording: boolean
 }
 
 export interface Emotions {

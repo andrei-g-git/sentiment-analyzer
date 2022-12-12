@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import AnalyzerForm from "./AnalyzerForm";
 import Results from './Results/Results';
 import MainHeading from './MainHeading';
+import Mic from './form/Mic';
 import "../css/AnalyzerMain.scss";
 
 
@@ -12,6 +13,7 @@ export const AnalyzerMain = (props: any) => {
                 Write something in the form...
             </MainHeading>
             <div className="analyzer-main-content">
+                <Mic />
                 <AnalyzerForm />
                 <Results />              
             </div>
